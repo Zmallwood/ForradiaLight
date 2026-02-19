@@ -7,6 +7,7 @@
 #include "Core/CoreGameObjects/Player.hpp"
 #include "Theme0/Scenes/Main/Sub/TileHovering.hpp"
 #include "Core/Input/Mouse/MouseInput.hpp"
+#include "Core/GUICore/GUITextConsole.hpp"
 
 namespace Forradia
 {
@@ -37,6 +38,15 @@ namespace Forradia
 
         if (now > _<Player>().GetTicksLastMove() + InvertSpeed(_<Player>().GetMovementSpeed()))
         {
+            if (_<Player>().IsHungry())
+            {
+                _<GUITextConsole>().PrintLine("You are hungry and are moving slower.");
+            }
+            else if (_<Player>().IsThirsty())
+            {
+                _<GUITextConsole>().PrintLine("You are thirsty and are moving slower.");
+            }
+
             auto dx{destinationCoordinate.x - currentCoordinate.x};
             auto dy{destinationCoordinate.y - currentCoordinate.y};
 

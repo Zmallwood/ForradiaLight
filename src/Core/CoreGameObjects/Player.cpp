@@ -224,6 +224,26 @@ namespace Forradia
         }
     }
 
+    bool Player::IsHungry() const
+    {
+        return m_hunger >= 0.9f;
+    }
+
+    bool Player::IsThirsty() const
+    {
+        return m_thirst >= 0.9f;
+    }
+
+    float Player::GetMovementSpeed() const
+    {
+        if (m_hunger >= 0.9f || m_thirst >= 0.9f)
+        {
+            return m_weakMovementSpeed;
+        }
+
+        return m_normalMovementSpeed;
+    }
+
     void Player::ApplyAuraToWorld(bool affectPlayer)
     {
         auto worldArea{_<World>().GetCurrentWorldArea()};

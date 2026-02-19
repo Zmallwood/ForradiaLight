@@ -6,6 +6,7 @@
 #include "UpdateKeyboardMovement.hpp"
 #include "Core/Input/Keyboard/KeyboardInput.hpp"
 #include "Core/CoreGameObjects/Player.hpp"
+#include "Core/GUICore/GUITextConsole.hpp"
 
 namespace Forradia
 {
@@ -28,6 +29,15 @@ namespace Forradia
              sPressed || dPressed))
         {
             _<Player>().SetDestinationCoordinate({-1, -1});
+
+            if (_<Player>().IsHungry())
+            {
+                _<GUITextConsole>().PrintLine("You are hungry and are moving slower.");
+            }
+            else if (_<Player>().IsThirsty())
+            {
+                _<GUITextConsole>().PrintLine("You are thirsty and are moving slower.");
+            }
 
             if (upPressed || wPressed)
             {

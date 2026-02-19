@@ -22,6 +22,12 @@ namespace Forradia
 
         void AddExperience(int value);
 
+        bool IsHungry() const;
+
+        bool IsThirsty() const;
+
+        float GetMovementSpeed() const;
+
         auto GetPosition() const
         {
             return m_position;
@@ -35,11 +41,6 @@ namespace Forradia
         void SetTicksLastMove(int value)
         {
             m_ticksLastMove = value;
-        }
-
-        auto GetMovementSpeed() const
-        {
-            return m_movementSpeed;
         }
 
         auto GetAuraSize() const
@@ -77,6 +78,11 @@ namespace Forradia
             return m_thirst;
         }
 
+        auto GetWeakMovementSpeed() const
+        {
+            return m_weakMovementSpeed;
+        }
+
       private:
         void MakeIsOnSuitableLocation();
 
@@ -84,7 +90,8 @@ namespace Forradia
 
         Point m_position{50, 50};
         int m_ticksLastMove{0};
-        float m_movementSpeed{4.5f};
+        float m_normalMovementSpeed{4.5f};
+        float m_weakMovementSpeed{2.0f};
         int m_auraSize{2};
         Point m_destinationCoordinate{-1, -1};
         int m_experience{0};
