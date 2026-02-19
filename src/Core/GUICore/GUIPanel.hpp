@@ -14,6 +14,8 @@ namespace Forradia
       public:
         GUIPanel(float x, float y, float width, float height);
 
+        float GetHeight() const;
+
       protected:
         virtual void RenderDerived() override;
 

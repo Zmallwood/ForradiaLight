@@ -12,12 +12,15 @@
 #include "CustomGUI/GUIStatusPanel.hpp"
 #include "Core/GUICore/GUI.hpp"
 #include "Core/CoreGameObjects/Player.hpp"
+#include "Core/GUICore/GUITextConsole.hpp"
 
 namespace Forradia
 {
     void MainScene::InitializeDerived()
     {
-        GetGUI()->AddComponent(std::make_shared<GUIExpMeter>());
+        GetGUI()->AddComponent(GetSingletonPtr<GUITextConsole>());
+
+        GetGUI()->AddComponent(GetSingletonPtr<GUIExpMeter>());
 
         GetGUI()->AddComponent(std::make_shared<GUIStatusPanel>());
     }
@@ -25,6 +28,9 @@ namespace Forradia
     void MainScene::OnEnterDerived()
     {
         _<Player>().Initialize();
+
+        _<GUITextConsole>().SetYPosition(1.0f - _<GUITextConsole>().GetHeight() -
+                                         _<GUIExpMeter>().GetHeight());
     }
 
     void MainScene::UpdateDerived()

@@ -33,4 +33,9 @@ namespace Forradia
     {
         return "Gold";
     }
+
+    float GUIMeter::GetHeight() const
+    {
+        return m_size.height;
+    }
 }

@@ -20,4 +20,9 @@ namespace Forradia
         _<ImageRenderer>().DrawImage(k_defaultBackgroundImage, position.x, position.y, m_size.width,
                                      m_size.height);
     }
+
+    float GUIPanel::GetHeight() const
+    {
+        return m_size.height;
+    }
 }

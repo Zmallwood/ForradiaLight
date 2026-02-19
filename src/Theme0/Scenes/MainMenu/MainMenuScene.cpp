@@ -10,12 +10,20 @@
 #include "Core/Rendering/ImageRenderer.hpp"
 #include "Core/GUICore/GUI.hpp"
 #include "Core/GUICore/GUIPanel.hpp"
+#include "Core/GUICore/GUITextConsole.hpp"
 
 namespace Forradia
 {
     void MainMenuScene::InitializeDerived()
     {
+        GetGUI()->AddComponent(GetSingletonPtr<GUITextConsole>());
+
         GetGUI()->AddComponent(std::make_shared<GUIPanel>(0.4f, 0.4f, 0.2f, 0.2f));
+    }
+
+    void MainMenuScene::OnEnterDerived()
+    {
+        _<GUITextConsole>().SetYPosition(1.0f - _<GUITextConsole>().GetHeight());
     }
 
     void MainMenuScene::UpdateDerived()

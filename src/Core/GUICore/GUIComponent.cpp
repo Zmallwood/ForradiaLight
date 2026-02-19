@@ -35,4 +35,9 @@ namespace Forradia
     {
         m_components.push_back(component);
     }
+
+    void GUIComponent::SetYPosition(float y)
+    {
+        m_position.y = y;
+    }
 }

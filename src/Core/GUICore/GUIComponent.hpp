@@ -20,6 +20,8 @@ namespace Forradia
 
         void AddComponent(std::shared_ptr<GUIComponent> component);
 
+        void SetYPosition(float y);
+
       protected:
         virtual void UpdateDerived()
         {
