@@ -13,5 +13,15 @@ namespace Forradia
     {
       public:
         GUITextConsole();
+
+        void PrintLine(std::string_view line);
+
+      protected:
+        void RenderDerived() override;
+
+      private:
+        static constexpr float k_lineHeight{0.03f};
+
+        std::vector<std::string> m_lines;
     };
 }

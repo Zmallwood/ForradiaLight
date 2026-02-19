@@ -19,6 +19,11 @@ namespace Forradia
       protected:
         virtual void RenderDerived() override;
 
+        auto GetSize() const
+        {
+            return m_size;
+        }
+
       private:
         inline static const std::string k_defaultBackgroundImage{"GUIPanelBackground"};
 

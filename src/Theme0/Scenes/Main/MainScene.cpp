@@ -31,6 +31,8 @@ namespace Forradia
 
         _<GUITextConsole>().SetYPosition(1.0f - _<GUITextConsole>().GetHeight() -
                                          _<GUIExpMeter>().GetHeight());
+
+        _<GUITextConsole>().PrintLine("You have entered Forradia.");
     }
 
     void MainScene::UpdateDerived()

@@ -9,6 +9,8 @@
 #include "Core/WorldStructure/Tile.hpp"
 #include "Core/WorldStructure/ObjectsStack.hpp"
 #include "Theme0/Configuration/Properties.hpp"
+#include "Theme0/Theme0Math/ExperienceMath.hpp"
+#include "Core/GUICore/GUITextConsole.hpp"
 
 namespace Forradia
 {
@@ -209,7 +211,17 @@ namespace Forradia
 
     void Player::AddExperience(int value)
     {
+        auto levelBefore{CalculateCurrentLevel(m_experience)};
+
         m_experience += value;
+
+        auto levelAfter{CalculateCurrentLevel(m_experience)};
+
+        if (levelAfter > levelBefore)
+        {
+            _<GUITextConsole>().PrintLine("You have reached level " + std::to_string(levelAfter) +
+                                          ".");
+        }
     }
 
     void Player::ApplyAuraToWorld(bool affectPlayer)
