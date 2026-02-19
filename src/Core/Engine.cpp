@@ -10,6 +10,8 @@
 #include "Input/Keyboard/KeyboardInput.hpp"
 #include "Input/Mouse/MouseInput.hpp"
 #include "MinorComponents/Cursor.hpp"
+#include "Core/Rendering/TextRenderer.hpp"
+#include "Core/MinorComponents/FPSCounter.hpp"
 
 namespace Forradia
 {
@@ -23,6 +25,8 @@ namespace Forradia
 
             _<ImageBank>().LoadImages();
 
+            _<TextRenderer>().Initialize();
+
             _<Cursor>().Initialize();
 
             while (m_running)
@@ -31,9 +35,13 @@ namespace Forradia
 
                 _<SceneManager>().UpdateCurrentScene();
 
+                _<FPSCounter>().Update();
+
                 _<SDLDevice>().ClearCanvas();
 
                 _<SceneManager>().RenderCurrentScene();
+
+                _<FPSCounter>().Render();
 
                 _<Cursor>().Render();
 

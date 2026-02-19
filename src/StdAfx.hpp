@@ -13,6 +13,7 @@
 #include <algorithm>
 #include <set>
 #include <vector>
+#include <unordered_map>
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
