@@ -16,5 +16,7 @@ namespace Forradia
         inline static const Color Wheat{0.96f, 0.87f, 0.7f, 1.0f};
 
         inline static const Color Gold{1.0f, 0.8f, 0.0f, 1.0f};
+
+        inline static const Color Black{0.0f, 0.0f, 0.0f, 1.0f};
     }
 }

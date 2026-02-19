@@ -13,6 +13,7 @@
 #include "Core/GUICore/GUI.hpp"
 #include "Core/CoreGameObjects/Player.hpp"
 #include "Core/GUICore/GUITextConsole.hpp"
+#include "CustomGUI/GUISkillSlotSet.hpp"
 #include "CustomGUI/GUISkillSlot.hpp"
 
 namespace Forradia
@@ -25,11 +26,9 @@ namespace Forradia
 
         GetGUI()->AddComponent(std::make_shared<GUIStatusPanel>());
 
-        GetGUI()->AddComponent(std::make_shared<GUISkillSlot>(0));
-        GetGUI()->AddComponent(std::make_shared<GUISkillSlot>(1));
-        GetGUI()->AddComponent(std::make_shared<GUISkillSlot>(2));
-        GetGUI()->AddComponent(std::make_shared<GUISkillSlot>(3));  
-        GetGUI()->AddComponent(std::make_shared<GUISkillSlot>(4));
+        GetGUI()->AddComponent(GetSingletonPtr<GUISkillSlotSet>());
+
+        _<GUISkillSlotSet>().GetSkillSlot(0)->SetSkillName("LightArea");
     }
 
     void MainScene::OnEnterDerived()
