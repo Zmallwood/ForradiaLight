@@ -13,6 +13,7 @@
 #include "Core/GUICore/GUI.hpp"
 #include "Core/CoreGameObjects/Player.hpp"
 #include "Core/GUICore/GUITextConsole.hpp"
+#include "CustomGUI/GUISkillSlot.hpp"
 
 namespace Forradia
 {
@@ -23,6 +24,12 @@ namespace Forradia
         GetGUI()->AddComponent(GetSingletonPtr<GUIExpMeter>());
 
         GetGUI()->AddComponent(std::make_shared<GUIStatusPanel>());
+
+        GetGUI()->AddComponent(std::make_shared<GUISkillSlot>(0));
+        GetGUI()->AddComponent(std::make_shared<GUISkillSlot>(1));
+        GetGUI()->AddComponent(std::make_shared<GUISkillSlot>(2));
+        GetGUI()->AddComponent(std::make_shared<GUISkillSlot>(3));  
+        GetGUI()->AddComponent(std::make_shared<GUISkillSlot>(4));
     }
 
     void MainScene::OnEnterDerived()

@@ -19,6 +19,8 @@ namespace Forradia
       protected:
         virtual void RenderDerived() override;
 
+        virtual std::string GetBackgroundImage() const;
+
         auto GetSize() const
         {
             return m_size;

@@ -9,7 +9,7 @@
 
 namespace Forradia
 {
-    GUIExpMeter::GUIExpMeter() : GUIMeter(0.0f, 0.97f, 1.0f, 0.03f)
+    GUIExpMeter::GUIExpMeter() : GUIMeter(0.0f, 0.985f, 1.0f, 0.015f)
     {
     }
 

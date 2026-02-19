@@ -17,8 +17,13 @@ namespace Forradia
     {
         auto position{GetPosition()};
 
-        _<ImageRenderer>().DrawImage(k_defaultBackgroundImage, position.x, position.y, m_size.width,
+        _<ImageRenderer>().DrawImage(GetBackgroundImage(), position.x, position.y, m_size.width,
                                      m_size.height);
+    }
+
+    std::string GUIPanel::GetBackgroundImage() const
+    {
+        return k_defaultBackgroundImage;
     }
 
     float GUIPanel::GetHeight() const
