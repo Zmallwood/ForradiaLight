@@ -246,9 +246,9 @@ namespace Forradia
                 {
                     AddExperience(darknessDelta);
 
-                    m_hunger = std::min(m_hunger + 0.001f, 1.0f);
+                    m_hunger = std::min(m_hunger + 0.00001f, 1.0f);
 
-                    m_thirst = std::min(m_thirst + 0.0007f, 1.0f);
+                    m_thirst = std::min(m_thirst + 0.000007f, 1.0f);
                 }
 
                 tile->SetDarknessLevel(newDarknessLevel);

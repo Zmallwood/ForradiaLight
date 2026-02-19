@@ -3,7 +3,7 @@
 
 namespace Forradia
 {
-    GUIThirstMeter::GUIThirstMeter() : GUIMeter(0.08f, 0.12f, 0.08f, 0.01f)
+    GUIThirstMeter::GUIThirstMeter() : GUIMeter(0.08f, 0.12f, 0.08f, 0.015f)
     {
     }
 
