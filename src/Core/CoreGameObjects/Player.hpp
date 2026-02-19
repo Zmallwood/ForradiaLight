@@ -67,10 +67,20 @@ namespace Forradia
             return m_name;
         }
 
+        auto GetHunger() const
+        {
+            return m_hunger;
+        }
+
+        auto GetThirst() const
+        {
+            return m_thirst;
+        }
+
       private:
         void MakeIsOnSuitableLocation();
 
-        void ApplyAuraToWorld(bool giveExperience = true);
+        void ApplyAuraToWorld(bool affectPlayer = true);
 
         Point m_position{50, 50};
         int m_ticksLastMove{0};
@@ -79,5 +89,7 @@ namespace Forradia
         Point m_destinationCoordinate{-1, -1};
         int m_experience{0};
         std::string m_name{"Unnamed Player"};
+        float m_hunger{0.0f};
+        float m_thirst{0.0f};
     };
 }

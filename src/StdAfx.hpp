@@ -26,5 +26,6 @@
 #include "Common/Matter/SizeF.hpp"
 #include "Common/Matter/Point.hpp"
 #include "Common/Matter/PointF.hpp"
+#include "Common/Matter/Color.hpp"
 #include "Common/Utilities.hpp"
 #include "Common/Constants.hpp"

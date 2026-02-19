@@ -7,11 +7,16 @@
 #include "Core/CoreGameObjects/Player.hpp"
 #include "Core/Rendering/TextRenderer.hpp"
 #include "Theme0/Theme0Math/ExperienceMath.hpp"
+#include "GUIHungerMeter.hpp"
+#include "GUIThirstMeter.hpp"
 
 namespace Forradia
 {
     GUIStatusPanel::GUIStatusPanel() : GUIPanel(0.0f, 0.0f, 0.18f, 0.15f)
     {
+        AddComponent(std::make_shared<GUIHungerMeter>());
+
+        AddComponent(std::make_shared<GUIThirstMeter>());
     }
 
     void GUIStatusPanel::RenderDerived()
@@ -25,5 +30,9 @@ namespace Forradia
         std::string levelText{"Level " + std::to_string(playerLevel)};
 
         _<TextRenderer>().DrawString(levelText, FontSizes::_20, 0.03f, 0.06f);
+
+        _<TextRenderer>().DrawString("Hunger", FontSizes::_20, 0.03f, 0.09f);
+
+        _<TextRenderer>().DrawString("Thirst", FontSizes::_20, 0.03f, 0.12f);
     }
 }

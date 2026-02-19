@@ -19,6 +19,8 @@ namespace Forradia
 
         virtual float GetMeterProgress();
 
+        virtual std::string GetColorName() const;
+
       private:
         SizeF m_size;
     };

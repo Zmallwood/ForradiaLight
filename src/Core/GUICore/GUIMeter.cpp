@@ -19,13 +19,18 @@ namespace Forradia
         auto size{m_size};
 
         _<ImageRenderer>().DrawImage("DarkBlue", position.x, position.y, size.width, size.height);
-        _<ImageRenderer>().DrawImage("Gold", position.x, position.y, GetMeterProgress(),
-                                     size.height);
+        _<ImageRenderer>().DrawImage(GetColorName(), position.x, position.y,
+                                     GetMeterProgress() * size.width, size.height);
         _<ImageRenderer>().DrawImage("Black", position.x, position.y, size.width, 0.005f);
     }
 
     float GUIMeter::GetMeterProgress()
     {
         return 0.0f;
+    }
+
+    std::string GUIMeter::GetColorName() const
+    {
+        return "Gold";
     }
 }
