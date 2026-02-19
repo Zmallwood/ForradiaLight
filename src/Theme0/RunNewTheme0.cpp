@@ -1,0 +1,15 @@
+/*
+ * Copyright 2026 Andreas Åkerberg
+ * This code is licensed under MIT license (see LICENSE for details)
+ */
+
+#include "RunNewTheme0.hpp"
+#include "Core/Game.hpp"
+
+namespace Forra
+{
+    void RunNewTheme0()
+    {
+        _<Game>().Start();
+    }
+}

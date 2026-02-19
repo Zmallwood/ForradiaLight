@@ -1,0 +1,41 @@
+/*
+ * Copyright 2026 Andreas Åkerberg
+ * This code is licensed under MIT license (see LICENSE for details)
+ */
+
+#pragma once
+
+namespace Forra
+{
+    class GUIComponent
+    {
+      public:
+        GUIComponent() = default;
+
+        GUIComponent(float x, float y);
+
+        void Update();
+
+        void Render();
+
+        void AddComponent(std::shared_ptr<GUIComponent> component);
+
+      protected:
+        virtual void UpdateDerived()
+        {
+        }
+
+        virtual void RenderDerived()
+        {
+        }
+
+        auto GetPosition() const
+        {
+            return m_position;
+        }
+
+      private:
+        std::vector<std::shared_ptr<GUIComponent>> m_components;
+        PointF m_position{0.0f, 0.0f};
+    };
+}

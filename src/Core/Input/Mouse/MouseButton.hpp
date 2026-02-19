@@ -1,0 +1,22 @@
+/*
+ * Copyright 2026 Andreas Åkerberg
+ * This code is licensed under MIT license (see LICENSE for details)
+ */
+
+#pragma once
+
+namespace Forra
+{
+    class MouseButton
+    {
+      public:
+        void RegisterPress();
+
+        void RegisterRelease();
+
+        bool IsPressedPickResult();
+
+      private:
+        bool m_pressed{false};
+    };
+}

@@ -1,0 +1,15 @@
+/*
+ * Copyright 2026 Andreas Åkerberg
+ * This code is licensed under MIT license (see LICENSE for details)
+ */
+
+#include "Theme0/RunNewTheme0.hpp"
+
+int main(int argc, char *argv[])
+{
+    using namespace Forra;
+
+    RunNewTheme0();
+
+    return 0;
+}
