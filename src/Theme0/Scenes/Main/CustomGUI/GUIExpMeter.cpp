@@ -7,7 +7,7 @@
 #include "Theme0/Theme0Math/ExperienceMath.hpp"
 #include "Core/CoreGameObjects/Player.hpp"
 
-namespace Forra
+namespace Forradia
 {
     GUIExpMeter::GUIExpMeter() : GUIMeter(0.0f, 0.97f, 1.0f, 0.03f)
     {

@@ -9,7 +9,7 @@
 #include "Core/WorldStructure/Tile.hpp"
 #include "Theme0/Configuration/Properties.hpp"
 
-namespace Forra
+namespace Forradia
 {
     Player::Player()
     {

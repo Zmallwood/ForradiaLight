@@ -11,7 +11,7 @@
 #include "Core/GUICore/GUI.hpp"
 #include "Core/GUICore/GUIPanel.hpp"
 
-namespace Forra
+namespace Forradia
 {
     void MainMenuScene::InitializeDerived()
     {

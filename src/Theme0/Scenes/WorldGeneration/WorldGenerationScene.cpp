@@ -9,7 +9,7 @@
 #include "Sub/WorldGenerator.hpp"
 #include "Core/Input/Mouse/MouseInput.hpp"
 
-namespace Forra
+namespace Forradia
 {
     void WorldGenerationScene::OnEnterDerived()
     {

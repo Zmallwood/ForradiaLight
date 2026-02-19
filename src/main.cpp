@@ -7,7 +7,7 @@
 
 int main(int argc, char *argv[])
 {
-    using namespace Forra;
+    using namespace Forradia;
 
     RunNewTheme0();
 

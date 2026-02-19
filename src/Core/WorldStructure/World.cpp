@@ -6,7 +6,7 @@
 #include "World.hpp"
 #include "WorldArea.hpp"
 
-namespace Forra
+namespace Forradia
 {
     World::World()
     {

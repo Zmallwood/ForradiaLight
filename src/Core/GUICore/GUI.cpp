@@ -5,6 +5,6 @@
 
 #include "GUI.hpp"
 
-namespace Forra
+namespace Forradia
 {
 }

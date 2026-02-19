@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace Forra
+namespace Forradia
 {
     int CalculateCurrentLevel(int experience);
 

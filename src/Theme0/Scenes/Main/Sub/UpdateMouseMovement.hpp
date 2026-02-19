@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace Forra
+namespace Forradia
 {
     void UpdateMouseMovement();
 }

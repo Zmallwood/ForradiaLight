@@ -9,7 +9,7 @@
 #include "Core/ScenesCore/SceneManager.hpp"
 #include "Core/Input/Mouse/MouseInput.hpp"
 
-namespace Forra
+namespace Forradia
 {
     void IntroScene::UpdateDerived()
     {

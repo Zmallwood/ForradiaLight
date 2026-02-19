@@ -6,7 +6,7 @@
 #include "RunNewTheme0.hpp"
 #include "Core/Game.hpp"
 
-namespace Forra
+namespace Forradia
 {
     void RunNewTheme0()
     {

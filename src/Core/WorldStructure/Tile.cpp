@@ -6,7 +6,7 @@
 #include "Tile.hpp"
 #include "ObjectsStack.hpp"
 
-namespace Forra
+namespace Forradia
 {
     Tile::Tile() : m_objectsStack(std::make_shared<ObjectsStack>())
     {

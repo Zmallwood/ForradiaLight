@@ -6,7 +6,7 @@
 #include "IScene.hpp"
 #include "Core/GUICore/GUI.hpp"
 
-namespace Forra
+namespace Forradia
 {
     IScene::IScene() : m_gui(std::make_shared<GUI>())
     {

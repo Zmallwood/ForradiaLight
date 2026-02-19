@@ -6,7 +6,7 @@
 #include "Game.hpp"
 #include "Engine.hpp"
 
-namespace Forra
+namespace Forradia
 {
     void Game::Start()
     {

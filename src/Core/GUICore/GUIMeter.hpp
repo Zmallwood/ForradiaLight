@@ -7,7 +7,7 @@
 
 #include "GUIComponent.hpp"
 
-namespace Forra
+namespace Forradia
 {
     class GUIMeter : public GUIComponent
     {

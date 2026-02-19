@@ -6,7 +6,7 @@
 #include "Cursor.hpp"
 #include "Core/Rendering/ImageRenderer.hpp"
 
-namespace Forra
+namespace Forradia
 {
     void Cursor::Initialize()
     {

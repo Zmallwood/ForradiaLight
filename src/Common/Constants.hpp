@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace Forra
+namespace Forradia
 {
     static constexpr float k_smallValue{0.001f};
 }

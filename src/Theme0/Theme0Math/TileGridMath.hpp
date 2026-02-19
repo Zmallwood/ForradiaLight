@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace Forra
+namespace Forradia
 {
     Size CalcTileGridSize();
 

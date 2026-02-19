@@ -7,7 +7,7 @@
 #include "Theme0/Configuration/Properties.hpp"
 #include "Tile.hpp"
 
-namespace Forra
+namespace Forradia
 {
     WorldArea::WorldArea()
     {

@@ -5,7 +5,7 @@
 
 #include "SDLDeleter.hpp"
 
-namespace Forra
+namespace Forradia
 {
     void SDLDeleter::operator()(SDL_Window *window) const
     {

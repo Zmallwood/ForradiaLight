@@ -7,7 +7,7 @@
 #include "Core/Input/Keyboard/KeyboardInput.hpp"
 #include "Core/CoreGameObjects/Player.hpp"
 
-namespace Forra
+namespace Forradia
 {
     void UpdateKeyboardMovement()
     {

@@ -11,7 +11,7 @@
 #include "CustomGUI/GUIExpMeter.hpp"
 #include "Core/GUICore/GUI.hpp"
 
-namespace Forra
+namespace Forradia
 {
     void MainScene::InitializeDerived()
     {

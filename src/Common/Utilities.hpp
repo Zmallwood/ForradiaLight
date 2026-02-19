@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace Forra
+namespace Forradia
 {
     std::string Replace(std::string_view text, char replace, char replaceWith);
 

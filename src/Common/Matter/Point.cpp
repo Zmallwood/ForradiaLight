@@ -5,7 +5,7 @@
 
 #include "Point.hpp"
 
-namespace Forra
+namespace Forradia
 {
     bool Point::operator==(const Point &other) const
     {

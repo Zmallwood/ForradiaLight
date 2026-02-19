@@ -5,7 +5,7 @@
 
 #include "ExperienceMath.hpp"
 
-namespace Forra
+namespace Forradia
 {
     int CalculateCurrentLevel(int experience)
     {

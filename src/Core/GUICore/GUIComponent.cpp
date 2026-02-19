@@ -5,7 +5,7 @@
 
 #include "GUIComponent.hpp"
 
-namespace Forra
+namespace Forradia
 {
     GUIComponent::GUIComponent(float x, float y) : m_position(x, y)
     {

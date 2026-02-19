@@ -6,7 +6,7 @@
 #include "ObjectsStack.hpp"
 #include "Object.hpp"
 
-namespace Forra
+namespace Forradia
 {
     void ObjectsStack::AddObject(std::string_view objectTypeName)
     {

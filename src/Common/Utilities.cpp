@@ -6,7 +6,7 @@
 #include "Utilities.hpp"
 #include "Core/SDLDevice.hpp"
 
-namespace Forra
+namespace Forradia
 {
     std::string Replace(std::string_view text, char replace, char replaceWith)
     {

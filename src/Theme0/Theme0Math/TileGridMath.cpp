@@ -6,7 +6,7 @@
 #include "TileGridMath.hpp"
 #include "Theme0/Configuration/Properties.hpp"
 
-namespace Forra
+namespace Forradia
 {
     Size CalcTileGridSize()
     {

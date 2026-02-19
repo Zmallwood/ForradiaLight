@@ -7,7 +7,7 @@
 
 #include "MouseButton.hpp"
 
-namespace Forra
+namespace Forradia
 {
     class MouseInput
     {

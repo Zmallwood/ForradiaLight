@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace Forra
+namespace Forradia
 {
     constexpr auto Hash(std::string_view text) -> int
     {

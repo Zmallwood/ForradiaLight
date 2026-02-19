@@ -7,7 +7,7 @@
 
 #include "Core/ScenesCore/IScene.hpp"
 
-namespace Forra
+namespace Forradia
 {
     class MainMenuScene : public IScene
     {

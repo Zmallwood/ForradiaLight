@@ -11,7 +11,7 @@
 #include "Input/Mouse/MouseInput.hpp"
 #include "MinorComponents/Cursor.hpp"
 
-namespace Forra
+namespace Forradia
 {
     void Engine::Run()
     {

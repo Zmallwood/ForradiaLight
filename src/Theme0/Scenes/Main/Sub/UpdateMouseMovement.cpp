@@ -8,7 +8,7 @@
 #include "Theme0/Scenes/Main/Sub/TileHovering.hpp"
 #include "Core/Input/Mouse/MouseInput.hpp"
 
-namespace Forra
+namespace Forradia
 {
     void UpdateMouseMovement()
     {

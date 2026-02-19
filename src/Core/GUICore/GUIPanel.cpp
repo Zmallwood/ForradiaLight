@@ -6,7 +6,7 @@
 #include "GUIPanel.hpp"
 #include "Core/Rendering/ImageRenderer.hpp"
 
-namespace Forra
+namespace Forradia
 {
     GUIPanel::GUIPanel(float x, float y, float width, float height)
         : GUIComponent(x, y), m_size(width, height)

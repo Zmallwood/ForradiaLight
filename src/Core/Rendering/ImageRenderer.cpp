@@ -7,7 +7,7 @@
 #include "Core/SDLDevice.hpp"
 #include "Core/Assets/ImageBank.hpp"
 
-namespace Forra
+namespace Forradia
 {
     void ImageRenderer::DrawImage(int imageNameHash, float x, float y, float width, float height)
     {

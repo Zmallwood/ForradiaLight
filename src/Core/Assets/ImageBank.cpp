@@ -6,7 +6,7 @@
 #include "ImageBank.hpp"
 #include "Core/SDLDevice.hpp"
 
-namespace Forra
+namespace Forradia
 {
     void ImageBank::LoadImages()
     {

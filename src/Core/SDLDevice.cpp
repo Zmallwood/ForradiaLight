@@ -5,7 +5,7 @@
 
 #include "SDLDevice.hpp"
 
-namespace Forra
+namespace Forradia
 {
     void SDLDevice::Initialize()
     {

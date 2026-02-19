@@ -5,7 +5,7 @@
 
 #include "Object.hpp"
 
-namespace Forra
+namespace Forradia
 {
     Object::Object(int type) : m_type(type)
     {

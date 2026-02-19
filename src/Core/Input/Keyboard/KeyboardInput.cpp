@@ -5,7 +5,7 @@
 
 #include "KeyboardInput.hpp"
 
-namespace Forra
+namespace Forradia
 {
     void KeyboardInput::RegisterKeyPress(SDL_Keycode key)
     {

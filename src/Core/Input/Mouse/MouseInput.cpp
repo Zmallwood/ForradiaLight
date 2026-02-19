@@ -5,7 +5,7 @@
 
 #include "MouseInput.hpp"
 
-namespace Forra
+namespace Forradia
 {
     MouseInput::MouseInput()
         : m_leftButton{std::make_shared<MouseButton>()},

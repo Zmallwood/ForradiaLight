@@ -5,7 +5,7 @@
 
 #include "MouseButton.hpp"
 
-namespace Forra
+namespace Forradia
 {
     void MouseButton::RegisterPress()
     {

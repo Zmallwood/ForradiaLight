@@ -9,7 +9,7 @@
 #include "Core/WorldStructure/Tile.hpp"
 #include "Core/WorldStructure/ObjectsStack.hpp"
 
-namespace Forra
+namespace Forradia
 {
     void WorldGenerator::GenerateNewWorld()
     {
