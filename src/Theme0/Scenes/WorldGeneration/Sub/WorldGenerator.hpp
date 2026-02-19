@@ -15,6 +15,8 @@ namespace Forradia
       private:
         void ClearWorldWithGrass();
 
+        void GenerateDirt();
+
         void GenerateWater();
 
         void GeneratObjects();

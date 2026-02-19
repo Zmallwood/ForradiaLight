@@ -15,6 +15,8 @@ namespace Forradia
     {
         ClearWorldWithGrass();
 
+        GenerateDirt();
+
         GenerateWater();
 
         GeneratObjects();
@@ -44,6 +46,51 @@ namespace Forradia
                 auto tile{worldArea->GetTile(x, y)};
 
                 tile->SetGround("KatenaNumbra");
+            }
+        }
+    }
+
+    void WorldGenerator::GenerateDirt()
+    {
+        auto worldArea{_<World>().GetCurrentWorldArea()};
+
+        if (!worldArea)
+        {
+            throw std::runtime_error(
+                "WorldGenerator: Current world area doesn't exist to generate dirt.");
+        }
+
+        auto size{worldArea->GetSize()};
+
+        auto numDirtAreas{30};
+
+        for (auto i = 0; i < numDirtAreas; i++)
+        {
+            auto xCenter{rand() % size.width};
+            auto yCenter{rand() % size.height};
+            auto radius{rand() % 3 + 5};
+
+            for (auto x = xCenter - radius; x <= xCenter + radius; x++)
+            {
+                for (auto y = yCenter - radius; y <= yCenter + radius; y++)
+                {
+                    if (!worldArea->IsValidTile(x, y))
+                    {
+                        continue;
+                    }
+
+                    auto dx{x - xCenter};
+                    auto dy{y - yCenter};
+
+                    if (dx * dx + dy * dy > radius * radius)
+                    {
+                        continue;
+                    }
+
+                    auto tile{worldArea->GetTile(x, y)};
+
+                    tile->SetGround("GroundDirt");
+                }
             }
         }
     }
@@ -184,6 +231,30 @@ namespace Forradia
 
                 objectsStack->AddObject("ObjectBush1");
             }
+        }
+
+        auto numStoneBoulders{200};
+
+        for (auto i = 0; i < numStoneBoulders; i++)
+        {
+            auto x{rand() % size.width};
+            auto y{rand() % size.height};
+
+            if (!worldArea->IsValidTile(x, y))
+            {
+                continue;
+            }
+
+            auto tile{worldArea->GetTile(x, y)};
+
+            auto objectsStack{tile->GetObjectsStack()};
+
+            if (!objectsStack)
+            {
+                throw std::runtime_error("WorldGenerator: Objects stack doesn't exist.");
+            }
+
+            objectsStack->AddObject("ObjectStoneBoulder");
         }
     }
 }

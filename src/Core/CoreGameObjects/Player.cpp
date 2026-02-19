@@ -67,7 +67,8 @@ namespace Forradia
         {
             if (objectsStack->HasObjectOfType("ObjectTree1") ||
                 objectsStack->HasObjectOfType("ObjectTree2") ||
-                objectsStack->HasObjectOfType("ObjectBush1"))
+                objectsStack->HasObjectOfType("ObjectBush1") ||
+                objectsStack->HasObjectOfType("ObjectStoneBoulder"))
             {
                 return;
             }
@@ -107,7 +108,8 @@ namespace Forradia
         {
             if (objectsStack->HasObjectOfType("ObjectTree1") ||
                 objectsStack->HasObjectOfType("ObjectTree2") ||
-                objectsStack->HasObjectOfType("ObjectBush1"))
+                objectsStack->HasObjectOfType("ObjectBush1") ||
+                objectsStack->HasObjectOfType("ObjectStoneBoulder"))
             {
                 return;
             }
@@ -147,7 +149,8 @@ namespace Forradia
         {
             if (objectsStack->HasObjectOfType("ObjectTree1") ||
                 objectsStack->HasObjectOfType("ObjectTree2") ||
-                objectsStack->HasObjectOfType("ObjectBush1"))
+                objectsStack->HasObjectOfType("ObjectBush1") ||
+                objectsStack->HasObjectOfType("ObjectStoneBoulder"))
             {
                 return;
             }
@@ -187,7 +190,8 @@ namespace Forradia
         {
             if (objectsStack->HasObjectOfType("ObjectTree1") ||
                 objectsStack->HasObjectOfType("ObjectTree2") ||
-                objectsStack->HasObjectOfType("ObjectBush1"))
+                objectsStack->HasObjectOfType("ObjectBush1") ||
+                objectsStack->HasObjectOfType("ObjectStoneBoulder"))
             {
                 return;
             }
