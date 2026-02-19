@@ -62,8 +62,13 @@ namespace Forradia
             return m_experience;
         }
 
+        auto GetName() const
+        {
+            return m_name;
+        }
+
       private:
-        void ApplyAuraToWorld();
+        void ApplyAuraToWorld(bool giveExperience = true);
 
         Point m_position{50, 50};
         int m_ticksLastMove{0};
@@ -71,5 +76,6 @@ namespace Forradia
         int m_auraSize{2};
         Point m_destinationCoordinate{-1, -1};
         int m_experience{0};
+        std::string m_name{"Unnamed Player"};
     };
 }

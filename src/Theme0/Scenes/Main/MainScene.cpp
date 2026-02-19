@@ -9,6 +9,7 @@
 #include "Sub/UpdateMouseMovement.hpp"
 #include "Sub/TileHovering.hpp"
 #include "CustomGUI/GUIExpMeter.hpp"
+#include "CustomGUI/GUIStatusPanel.hpp"
 #include "Core/GUICore/GUI.hpp"
 
 namespace Forradia
@@ -16,6 +17,8 @@ namespace Forradia
     void MainScene::InitializeDerived()
     {
         GetGUI()->AddComponent(std::make_shared<GUIExpMeter>());
+
+        GetGUI()->AddComponent(std::make_shared<GUIStatusPanel>());
     }
 
     void MainScene::UpdateDerived()

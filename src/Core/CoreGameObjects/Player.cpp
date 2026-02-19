@@ -13,7 +13,7 @@ namespace Forradia
 {
     Player::Player()
     {
-        ApplyAuraToWorld();
+        ApplyAuraToWorld(false);
     }
 
     void Player::MoveNorth()
@@ -69,7 +69,7 @@ namespace Forradia
         m_experience += value;
     }
 
-    void Player::ApplyAuraToWorld()
+    void Player::ApplyAuraToWorld(bool giveExperience)
     {
         auto worldArea{_<World>().GetCurrentWorldArea()};
 
@@ -103,7 +103,10 @@ namespace Forradia
 
                 auto darknessDelta{origDarknessLevel - newDarknessLevel};
 
-                AddExperience(darknessDelta);
+                if (giveExperience)
+                {
+                    AddExperience(darknessDelta);
+                }
 
                 tile->SetDarknessLevel(newDarknessLevel);
             }
