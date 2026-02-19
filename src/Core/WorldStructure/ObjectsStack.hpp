@@ -14,6 +14,8 @@ namespace Forradia
       public:
         void AddObject(std::string_view objectTypeName);
 
+        bool HasObjectOfType(std::string_view objectTypeName) const;
+
         auto GetObjects()
         {
             return m_objects;

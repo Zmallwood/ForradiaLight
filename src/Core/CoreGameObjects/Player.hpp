@@ -10,7 +10,7 @@ namespace Forradia
     class Player
     {
       public:
-        Player();
+        void Initialize();
 
         void MoveNorth();
 
@@ -68,6 +68,8 @@ namespace Forradia
         }
 
       private:
+        void MakeIsOnSuitableLocation();
+
         void ApplyAuraToWorld(bool giveExperience = true);
 
         Point m_position{50, 50};

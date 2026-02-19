@@ -12,4 +12,18 @@ namespace Forradia
     {
         m_objects.push_back(std::make_shared<Object>(Hash(objectTypeName)));
     }
+
+    bool ObjectsStack::HasObjectOfType(std::string_view objectTypeName) const
+    {
+        auto objectTypeHash{Hash(objectTypeName)};
+
+        for (auto object : m_objects)
+        {
+            if (object->GetType() == objectTypeHash)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }

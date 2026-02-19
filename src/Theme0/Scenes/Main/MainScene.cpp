@@ -11,6 +11,7 @@
 #include "CustomGUI/GUIExpMeter.hpp"
 #include "CustomGUI/GUIStatusPanel.hpp"
 #include "Core/GUICore/GUI.hpp"
+#include "Core/CoreGameObjects/Player.hpp"
 
 namespace Forradia
 {
@@ -19,6 +20,11 @@ namespace Forradia
         GetGUI()->AddComponent(std::make_shared<GUIExpMeter>());
 
         GetGUI()->AddComponent(std::make_shared<GUIStatusPanel>());
+    }
+
+    void MainScene::OnEnterDerived()
+    {
+        _<Player>().Initialize();
     }
 
     void MainScene::UpdateDerived()
