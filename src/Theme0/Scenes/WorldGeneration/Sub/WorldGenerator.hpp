@@ -17,6 +17,8 @@ namespace Forradia
 
         void GenerateDirt();
 
+        void GenerateRock();
+
         void GenerateWater();
 
         void GeneratObjects();

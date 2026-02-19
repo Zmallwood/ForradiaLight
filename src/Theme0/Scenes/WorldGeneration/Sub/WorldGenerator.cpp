@@ -17,6 +17,8 @@ namespace Forradia
 
         GenerateDirt();
 
+        GenerateRock();
+
         GenerateWater();
 
         GeneratObjects();
@@ -90,6 +92,51 @@ namespace Forradia
                     auto tile{worldArea->GetTile(x, y)};
 
                     tile->SetGround("GroundDirt");
+                }
+            }
+        }
+    }
+
+    void WorldGenerator::GenerateRock()
+    {
+        auto worldArea{_<World>().GetCurrentWorldArea()};
+
+        if (!worldArea)
+        {
+            throw std::runtime_error(
+                "WorldGenerator: Current world area doesn't exist to generate dirt.");
+        }
+
+        auto size{worldArea->GetSize()};
+
+        auto numRockAreas{30};
+
+        for (auto i = 0; i < numRockAreas; i++)
+        {
+            auto xCenter{rand() % size.width};
+            auto yCenter{rand() % size.height};
+            auto radius{rand() % 3 + 5};
+
+            for (auto x = xCenter - radius; x <= xCenter + radius; x++)
+            {
+                for (auto y = yCenter - radius; y <= yCenter + radius; y++)
+                {
+                    if (!worldArea->IsValidTile(x, y))
+                    {
+                        continue;
+                    }
+
+                    auto dx{x - xCenter};
+                    auto dy{y - yCenter};
+
+                    if (dx * dx + dy * dy > radius * radius)
+                    {
+                        continue;
+                    }
+
+                    auto tile{worldArea->GetTile(x, y)};
+
+                    tile->SetGround("GroundRock");
                 }
             }
         }
