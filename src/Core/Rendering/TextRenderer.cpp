@@ -29,12 +29,15 @@ namespace Forradia
         m_fonts.insert({fontSize, newFont});
     }
 
-    void TextRenderer::DrawString(std::string_view text, FontSizes fontSize, float x, float y)
+    void TextRenderer::DrawString(std::string_view text, FontSizes fontSize, float x, float y,
+                                  Color color)
     {
         auto font{m_fonts[fontSize]};
 
+        auto sdlColor{color.ToSDLColor()};
+
         auto surface{std::shared_ptr<SDL_Surface>(
-            TTF_RenderText_Solid(font.get(), text.data(), {255, 255, 255, 255}), SDLDeleter())};
+            TTF_RenderText_Solid(font.get(), text.data(), sdlColor), SDLDeleter())};
 
         auto texture{std::shared_ptr<SDL_Texture>(
             SDL_CreateTextureFromSurface(_<SDLDevice>().GetRenderer().get(), surface.get()),

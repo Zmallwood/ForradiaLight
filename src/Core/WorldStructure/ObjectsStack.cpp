@@ -26,4 +26,9 @@ namespace Forradia
         }
         return false;
     }
+
+    int ObjectsStack::GetSize() const
+    {
+        return static_cast<int>(m_objects.size());
+    }
 }

@@ -16,6 +16,8 @@ namespace Forradia
 
         bool HasObjectOfType(std::string_view objectTypeName) const;
 
+        int GetSize() const;
+
         auto GetObjects()
         {
             return m_objects;

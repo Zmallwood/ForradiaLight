@@ -12,7 +12,7 @@
 
 namespace Forradia
 {
-    GUIStatusPanel::GUIStatusPanel() : GUIPanel(0.0f, 0.0f, 0.18f, 0.15f)
+    GUIStatusPanel::GUIStatusPanel() : GUIPanel(0.0f, 0.0f, 0.2f, 0.2f)
     {
         AddComponent(std::make_shared<GUIHungerMeter>());
 
@@ -29,10 +29,10 @@ namespace Forradia
 
         std::string levelText{"Level " + std::to_string(playerLevel)};
 
-        _<TextRenderer>().DrawString(levelText, FontSizes::_20, 0.03f, 0.06f);
+        _<TextRenderer>().DrawString(levelText, FontSizes::_26, 0.03f, 0.07f, Palette::Gold);
 
-        _<TextRenderer>().DrawString("Hunger", FontSizes::_20, 0.03f, 0.09f);
+        _<TextRenderer>().DrawString("Hunger", FontSizes::_20, 0.03f, 0.12f);
 
-        _<TextRenderer>().DrawString("Thirst", FontSizes::_20, 0.03f, 0.12f);
+        _<TextRenderer>().DrawString("Thirst", FontSizes::_20, 0.03f, 0.15f);
     }
 }

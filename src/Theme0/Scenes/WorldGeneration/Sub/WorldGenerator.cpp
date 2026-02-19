@@ -334,8 +334,13 @@ namespace Forradia
 
             auto tile{worldArea->GetTile(x, y)};
 
-            if (tile->GetGround() == Hash("KatenaNumbra"))
+            if (tile->GetGround() != Hash("GroundWater"))
             {
+                if (tile->GetObjectsStack()->GetSize() > 0)
+                {
+                    continue;
+                }
+
                 tile->SetCreature(std::make_shared<Creature>("CreatureWhiteRabbit"));
             }
         }
