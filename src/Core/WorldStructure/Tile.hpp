@@ -8,6 +8,7 @@
 namespace Forradia
 {
     class ObjectsStack;
+    class Creature;
 
     class Tile
     {
@@ -39,9 +40,20 @@ namespace Forradia
             m_darknessLevel = value;
         }
 
+        auto GetCreature() const
+        {
+            return m_creature;
+        }
+
+        void SetCreature(std::shared_ptr<Creature> value)
+        {
+            m_creature = value;
+        }
+
       private:
         int m_ground{0};
         std::shared_ptr<ObjectsStack> m_objectsStack;
         int m_darknessLevel{6};
+        std::shared_ptr<Creature> m_creature;
     };
 }

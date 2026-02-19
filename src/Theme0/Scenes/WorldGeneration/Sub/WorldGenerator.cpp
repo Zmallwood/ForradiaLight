@@ -8,6 +8,7 @@
 #include "Core/WorldStructure/WorldArea.hpp"
 #include "Core/WorldStructure/Tile.hpp"
 #include "Core/WorldStructure/ObjectsStack.hpp"
+#include "Core/WorldStructure/Creature.hpp"
 
 namespace Forradia
 {
@@ -22,6 +23,8 @@ namespace Forradia
         GenerateWater();
 
         GeneratObjects();
+
+        GenerateCreatures();
     }
 
     void WorldGenerator::ClearWorldWithGrass()
@@ -302,6 +305,39 @@ namespace Forradia
             }
 
             objectsStack->AddObject("ObjectStoneBoulder");
+        }
+    }
+
+    void WorldGenerator::GenerateCreatures()
+    {
+        auto worldArea{_<World>().GetCurrentWorldArea()};
+
+        if (!worldArea)
+        {
+            throw std::runtime_error(
+                "WorldGenerator: Current world area doesn't exist to generate creatures.");
+        }
+
+        auto size{worldArea->GetSize()};
+
+        auto numWhiteRabbits{100};
+
+        for (auto i = 0; i < numWhiteRabbits; i++)
+        {
+            auto x{rand() % size.width};
+            auto y{rand() % size.height};
+
+            if (!worldArea->IsValidTile(x, y))
+            {
+                continue;
+            }
+
+            auto tile{worldArea->GetTile(x, y)};
+
+            if (tile->GetGround() == Hash("KatenaNumbra"))
+            {
+                tile->SetCreature(std::make_shared<Creature>("CreatureWhiteRabbit"));
+            }
         }
     }
 }

@@ -14,6 +14,7 @@
 #include "Core/CoreGameObjects/Player.hpp"
 #include "Core/Assets/ImageBank.hpp"
 #include "Theme0/Scenes/Main/Sub/TileHovering.hpp"
+#include "Core/WorldStructure/Creature.hpp"
 
 namespace Forradia
 {
@@ -120,6 +121,15 @@ namespace Forradia
 
                     _<ImageRenderer>().DrawImage(object->GetType(), imageX, imageY, imageWidth,
                                                  imageHeight);
+                }
+
+                auto creature{tile->GetCreature()};
+
+                if (creature)
+                {
+                    _<ImageRenderer>().DrawImage(creature->GetType(), x * tileSize.width,
+                                                 y * tileSize.height, tileSize.width + smallValue,
+                                                 tileSize.height + smallValue);
                 }
 
                 if (xCoordinate == playerPosition.x && yCoordinate == playerPosition.y)

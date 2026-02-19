@@ -22,5 +22,7 @@ namespace Forradia
         void GenerateWater();
 
         void GeneratObjects();
+
+        void GenerateCreatures();
     };
 }
