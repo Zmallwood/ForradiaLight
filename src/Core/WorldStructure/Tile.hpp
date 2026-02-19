@@ -50,10 +50,32 @@ namespace Forradia
             m_creature = value;
         }
 
+        auto GetSkillNameHash() const
+        {
+            return m_skillNameHash;
+        }
+
+        void SetSkillNameHash(int value)
+        {
+            m_skillNameHash = value;
+        }
+
+        auto GetTicksSkillCasted() const
+        {
+            return m_ticksSkillCasted;
+        }
+
+        void SetTicksSkillCasted(int value)
+        {
+            m_ticksSkillCasted = value;
+        }
+
       private:
         int m_ground{0};
         std::shared_ptr<ObjectsStack> m_objectsStack;
         int m_darknessLevel{6};
         std::shared_ptr<Creature> m_creature;
+        int m_skillNameHash{0};
+        int m_ticksSkillCasted{0};
     };
 }

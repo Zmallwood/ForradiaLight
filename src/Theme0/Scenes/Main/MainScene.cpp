@@ -15,6 +15,7 @@
 #include "Core/GUICore/GUITextConsole.hpp"
 #include "CustomGUI/GUISkillSlotSet.hpp"
 #include "CustomGUI/GUISkillSlot.hpp"
+#include "Sub/UpdateSkillCasting.hpp"
 
 namespace Forradia
 {
@@ -48,6 +49,8 @@ namespace Forradia
         _<TileHovering>().Update();
 
         UpdateMouseMovement();
+
+        UpdateSkillCasting();
     }
 
     void MainScene::RenderDerived()

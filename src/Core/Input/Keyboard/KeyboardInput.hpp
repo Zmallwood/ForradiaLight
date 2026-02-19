@@ -18,6 +18,8 @@ namespace Forradia
 
         bool KeyIsPressed(SDL_Keycode key);
 
+        bool KeyIsPressedPickResult(SDL_Keycode key);
+
       private:
         std::set<SDL_Keycode> m_pressedKeys;
     };

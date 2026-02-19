@@ -20,6 +20,8 @@ namespace Forradia
 {
     void WorldView::Render() const
     {
+        auto now{SDL_GetTicks()};
+
         auto currentWorldArea = _<World>().GetCurrentWorldArea();
 
         if (!currentWorldArea)
@@ -80,6 +82,17 @@ namespace Forradia
                 for (auto i = 0; i < darknessLevel; i++)
                 {
                     _<ImageRenderer>().DrawImage("TransparentBlack", x * tileSize.width,
+                                                 y * tileSize.height, tileSize.width + smallValue,
+                                                 tileSize.height + smallValue);
+                }
+
+                auto skillNameHash{tile->GetSkillNameHash()};
+
+                auto ticksSkillCasted{tile->GetTicksSkillCasted()};
+
+                if (skillNameHash != 0 && now - ticksSkillCasted < 400)
+                {
+                    _<ImageRenderer>().DrawImage(skillNameHash, x * tileSize.width,
                                                  y * tileSize.height, tileSize.width + smallValue,
                                                  tileSize.height + smallValue);
                 }

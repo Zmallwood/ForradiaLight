@@ -29,4 +29,12 @@ namespace Forradia
     {
         return m_pressedKeys.contains(key);
     }
+
+    bool KeyboardInput::KeyIsPressedPickResult(SDL_Keycode key)
+    {
+        auto result{KeyIsPressed(key)};
+        m_pressedKeys.erase(key);
+
+        return result;
+    }
 }
