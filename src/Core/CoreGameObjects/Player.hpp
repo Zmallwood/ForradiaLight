@@ -28,6 +28,8 @@ namespace Forradia
 
         float GetMovementSpeed() const;
 
+        void ApplyAuraToWorld(bool affectPlayer = true);
+
         auto GetPosition() const
         {
             return m_position;
@@ -83,20 +85,51 @@ namespace Forradia
             return m_weakMovementSpeed;
         }
 
+        auto GetTicksStartMeditating() const
+        {
+            return m_ticksStartMeditating;
+        }
+
+        void SetTicksStartMeditating(int value)
+        {
+            m_ticksStartMeditating = value;
+        }
+
+        auto GetTicksLastMeditationUpdate() const
+        {
+            return m_ticksLastMeditationUpdate;
+        }
+
+        void SetTicksLastMeditationUpdate(int value)
+        {
+            m_ticksLastMeditationUpdate = value;
+        }
+
+        auto GetAuraStrength() const
+        {
+            return m_auraStrength;
+        }
+
+        void SetAuraStrength(float value)
+        {
+            m_auraStrength = value;
+        }
+
       private:
         void MakeIsOnSuitableLocation();
 
-        void ApplyAuraToWorld(bool affectPlayer = true);
-
         Point m_position{50, 50};
         int m_ticksLastMove{0};
-        float m_normalMovementSpeed{4.5f};
-        float m_weakMovementSpeed{2.0f};
+        float m_normalMovementSpeed{3.5f};
+        float m_weakMovementSpeed{1.0f};
         int m_auraSize{2};
         Point m_destinationCoordinate{-1, -1};
         int m_experience{0};
         std::string m_name{"Unnamed Player"};
         float m_hunger{0.0f};
         float m_thirst{0.0f};
+        float m_auraStrength{0.2f};
+        int m_ticksStartMeditating{0};
+        int m_ticksLastMeditationUpdate{0};
     };
 }

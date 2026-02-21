@@ -11,6 +11,6 @@ namespace Forradia
     {
       public:
         static constexpr Size k_worldAreaSize{100, 100};
-        static constexpr int k_numTileGridRows{11};
+        static constexpr int k_numTileGridRows{21};
     };
 }

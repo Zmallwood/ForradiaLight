@@ -83,6 +83,15 @@ namespace Forradia
 
         m_position = newPosition;
 
+        if (m_ticksStartMeditating > 0)
+        {
+            m_ticksStartMeditating = 0;
+
+            _<GUITextConsole>().PrintLine("You stop meditating.");
+        }
+
+        m_auraStrength = std::max(m_auraStrength - 0.005f, 0.0f);
+
         ApplyAuraToWorld();
     }
 
@@ -123,6 +132,15 @@ namespace Forradia
         }
 
         m_position = newPosition;
+
+        if (m_ticksStartMeditating > 0)
+        {
+            m_ticksStartMeditating = 0;
+
+            _<GUITextConsole>().PrintLine("You stop meditating.");
+        }
+
+        m_auraStrength = std::max(m_auraStrength - 0.005f, 0.0f);
 
         ApplyAuraToWorld();
     }
@@ -165,6 +183,15 @@ namespace Forradia
 
         m_position = newPosition;
 
+        if (m_ticksStartMeditating > 0)
+        {
+            m_ticksStartMeditating = 0;
+
+            _<GUITextConsole>().PrintLine("You stop meditating.");
+        }
+
+        m_auraStrength = std::max(m_auraStrength - 0.005f, 0.0f);
+
         ApplyAuraToWorld();
     }
 
@@ -206,6 +233,15 @@ namespace Forradia
 
         m_position = newPosition;
 
+        if (m_ticksStartMeditating > 0)
+        {
+            m_ticksStartMeditating = 0;
+
+            _<GUITextConsole>().PrintLine("You stop meditating.");
+        }
+
+        m_auraStrength = std::max(m_auraStrength - 0.005f, 0.0f);
+
         ApplyAuraToWorld();
     }
 
@@ -246,6 +282,11 @@ namespace Forradia
 
     void Player::ApplyAuraToWorld(bool affectPlayer)
     {
+        if (m_auraStrength <= 0.00001f)
+        {
+            return;
+        }
+
         auto worldArea{_<World>().GetCurrentWorldArea()};
 
         if (!worldArea)
@@ -255,6 +296,10 @@ namespace Forradia
 
         auto maxAuraDistance{16};
         auto auraSize{GetAuraSize()};
+
+        auto totalExpGain{0.0f};
+        auto totalHungerGain{0.0f};
+        auto totalThirstGain{0.0f};
 
         for (auto y = m_position.y - maxAuraDistance; y <= m_position.y + maxAuraDistance; y++)
         {
@@ -267,8 +312,8 @@ namespace Forradia
 
                 auto tile{worldArea->GetTile(x, y)};
 
-                auto dx{x - m_position.x};
-                auto dy{y - m_position.y};
+                auto dx{(x - m_position.x) / m_auraStrength};
+                auto dy{(y - m_position.y) / m_auraStrength};
 
                 auto distance{static_cast<int>(sqrt(dx * dx + dy * dy))};
 
@@ -278,17 +323,19 @@ namespace Forradia
 
                 auto darknessDelta{origDarknessLevel - newDarknessLevel};
 
-                if (affectPlayer)
-                {
-                    AddExperience(darknessDelta);
-
-                    m_hunger = std::min(m_hunger + 0.00001f, 1.0f);
-
-                    m_thirst = std::min(m_thirst + 0.000007f, 1.0f);
-                }
+                totalExpGain += darknessDelta / 5.0f;
+                totalHungerGain += 0.00001f;
+                totalThirstGain += 0.000007f;
 
                 tile->SetDarknessLevel(newDarknessLevel);
             }
+        }
+
+        if (affectPlayer)
+        {
+            AddExperience(totalExpGain);
+            m_hunger = std::min(m_hunger + totalHungerGain, 1.0f);
+            m_thirst = std::min(m_thirst + totalThirstGain, 1.0f);
         }
     }
 }
