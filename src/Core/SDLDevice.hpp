@@ -7,6 +7,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the SDL device, used to initialize and manage the SDL window and renderer.
+     */
     class SDLDevice
     {
       public:

@@ -7,6 +7,10 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the keyboard input, used to register and obtain states of key presses and
+     * releases.
+     */
     class KeyboardInput
     {
       public:

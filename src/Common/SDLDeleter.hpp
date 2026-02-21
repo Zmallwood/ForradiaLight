@@ -7,6 +7,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents a deleter for SDL objects, used for automatic cleanup.
+     */
     class SDLDeleter
     {
       public:

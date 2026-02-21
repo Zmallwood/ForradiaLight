@@ -7,6 +7,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents a creature in the game world.
+     */
     class Creature
     {
       public:

@@ -9,6 +9,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the main scene, used to display the main game screen.
+     */
     class MainScene : public IScene
     {
       protected:

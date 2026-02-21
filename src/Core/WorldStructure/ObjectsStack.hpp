@@ -9,6 +9,9 @@ namespace Forradia
 {
     class Object;
 
+    /**
+     * Represents a stack of objects on a tile in the game world.
+     */
     class ObjectsStack
     {
       public:

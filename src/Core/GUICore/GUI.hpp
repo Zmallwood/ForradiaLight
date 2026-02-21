@@ -9,6 +9,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents a GUI, of which every scene has one.
+     */
     class GUI : public GUIComponent
     {
       public:

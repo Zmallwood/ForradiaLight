@@ -7,6 +7,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the world generator, used to generate the world.
+     */
     class WorldGenerator
     {
       public:

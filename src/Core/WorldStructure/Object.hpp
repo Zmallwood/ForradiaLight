@@ -7,6 +7,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents an object in the game world.
+     */
     class Object
     {
       public:

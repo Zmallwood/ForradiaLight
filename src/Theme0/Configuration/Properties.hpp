@@ -7,6 +7,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the properties of the game.
+     */
     class Properties
     {
       public:

@@ -9,6 +9,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents a skill slot in the GUI.
+     */
     class GUISkillSlot : public GUIPanel
     {
       public:

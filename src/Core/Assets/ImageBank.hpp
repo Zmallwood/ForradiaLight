@@ -7,6 +7,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents a bank of images, used to load and store images.
+     */
     class ImageBank
     {
       public:

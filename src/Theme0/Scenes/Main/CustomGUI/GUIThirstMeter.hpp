@@ -9,6 +9,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the thirst meter in the GUI.
+     */
     class GUIThirstMeter : public GUIMeter
     {
       public:

@@ -9,6 +9,9 @@ namespace Forradia
 {
     class Tile;
 
+    /**
+     * Represents a tile grid area of the game world.
+     */
     class WorldArea
     {
       public:

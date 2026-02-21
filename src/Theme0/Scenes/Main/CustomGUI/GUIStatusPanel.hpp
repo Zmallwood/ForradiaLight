@@ -9,6 +9,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the status panel in the GUI.
+     */
     class GUIStatusPanel : public GUIPanel
     {
       public:

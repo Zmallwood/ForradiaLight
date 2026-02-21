@@ -9,6 +9,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the intro scene, used to display the intro screen.
+     */
     class IntroScene : public IScene
     {
       protected:

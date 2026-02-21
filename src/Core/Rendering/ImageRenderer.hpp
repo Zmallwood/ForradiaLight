@@ -7,6 +7,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the image renderer, used to render images to the canvas.
+     */
     class ImageRenderer
     {
       public:

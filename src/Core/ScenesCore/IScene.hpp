@@ -9,6 +9,9 @@ namespace Forradia
 {
     class GUI;
 
+    /**
+     * Represents a scene in the game.
+     */
     class IScene
     {
       public:

@@ -9,6 +9,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the main menu scene, used to display the main menu.
+     */
     class MainMenuScene : public IScene
     {
       protected:

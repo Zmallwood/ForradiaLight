@@ -7,6 +7,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents a component of a GUI.
+     */
     class GUIComponent
     {
       public:

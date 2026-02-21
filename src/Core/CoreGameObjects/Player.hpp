@@ -7,6 +7,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the player character in the game.
+     */
     class Player
     {
       public:

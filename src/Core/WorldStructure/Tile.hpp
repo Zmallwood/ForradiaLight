@@ -10,6 +10,9 @@ namespace Forradia
     class ObjectsStack;
     class Creature;
 
+    /**
+     * Represents a tile in the game world.
+     */
     class Tile
     {
       public:

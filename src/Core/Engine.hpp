@@ -7,6 +7,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the engine of the game.
+     */
     class Engine
     {
       public:

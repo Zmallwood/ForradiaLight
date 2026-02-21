@@ -9,6 +9,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents a text console in the GUI, used as a singleton.
+     */
     class GUITextConsole : public GUIPanel
     {
       public:

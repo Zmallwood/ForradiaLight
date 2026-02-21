@@ -9,6 +9,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the experience meter in the GUI.
+     */
     class GUIExpMeter : public GUIMeter
     {
       public:

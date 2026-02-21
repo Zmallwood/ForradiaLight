@@ -7,6 +7,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents a point in the 2D space with floating point precision.
+     */
     class PointF
     {
       public:

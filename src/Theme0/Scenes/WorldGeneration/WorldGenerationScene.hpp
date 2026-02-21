@@ -9,6 +9,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the world generation scene, used to generate the world.
+     */
     class WorldGenerationScene : public IScene
     {
       protected:

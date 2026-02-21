@@ -9,6 +9,9 @@ namespace Forradia
 {
     class IScene;
 
+    /**
+     * Represents the scene manager, used to manage the scenes in the game.
+     */
     class SceneManager
     {
       public:

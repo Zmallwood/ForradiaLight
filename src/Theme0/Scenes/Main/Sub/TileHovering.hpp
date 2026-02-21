@@ -7,6 +7,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the tile hovering, used to track the tile that the player is hovering over.
+     */
     class TileHovering
     {
       public:

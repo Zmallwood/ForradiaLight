@@ -7,6 +7,10 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the FPS counter, used to count the frames per second and render the FPS to the
+     * canvas.
+     */
     class FPSCounter
     {
       public:

@@ -9,6 +9,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents a meter in the GUI.
+     */
     class GUIMeter : public GUIComponent
     {
       public:

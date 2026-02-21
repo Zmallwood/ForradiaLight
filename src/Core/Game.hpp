@@ -7,6 +7,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents a game instance.
+     */
     class Game
     {
       public:

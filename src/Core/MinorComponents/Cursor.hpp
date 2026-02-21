@@ -7,6 +7,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the cursor, used to render the game cursor to the canvas.
+     */
     class Cursor
     {
       public:

@@ -9,6 +9,10 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the mouse input, used to register and obtain states of button presses and
+     * releases.
+     */
     class MouseInput
     {
       public:

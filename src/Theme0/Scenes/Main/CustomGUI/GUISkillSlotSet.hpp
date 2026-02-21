@@ -11,6 +11,9 @@ namespace Forradia
 {
     class GUISkillSlot;
 
+    /**
+     * Represents a set of skill slots in the GUI.
+     */
     class GUISkillSlotSet : public GUIComponent
     {
       public:

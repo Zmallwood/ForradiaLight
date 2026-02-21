@@ -7,6 +7,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents a color in the RGBA format.
+     */
     class Color
     {
       public:

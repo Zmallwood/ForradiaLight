@@ -7,6 +7,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents a size in the 2D space with integer precision.
+     */
     class Size
     {
       public:

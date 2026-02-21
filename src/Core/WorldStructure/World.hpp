@@ -9,6 +9,9 @@ namespace Forradia
 {
     class WorldArea;
 
+    /**
+     * Represents the game world.
+     */
     class World
     {
       public:

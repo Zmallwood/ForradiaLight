@@ -7,6 +7,10 @@
 
 namespace Forradia
 {
+    /**
+     * Represents a button of the mouse, used to register and obtain states of button presses and
+     * releases.
+     */
     class MouseButton
     {
       public:

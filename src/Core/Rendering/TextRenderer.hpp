@@ -9,6 +9,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the text renderer, used to render text to the canvas.
+     */
     class TextRenderer
     {
       public:

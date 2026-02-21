@@ -9,6 +9,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents a panel in the GUI.
+     */
     class GUIPanel : public GUIComponent
     {
       public:

@@ -7,6 +7,9 @@
 
 namespace Forradia
 {
+    /**
+     * Represents the world view, used to render the world to the canvas.
+     */
     class WorldView
     {
       public:
