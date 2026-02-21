@@ -147,7 +147,7 @@ namespace Forradia
 
                 if (xCoordinate == playerPosition.x && yCoordinate == playerPosition.y)
                 {
-                    _<ImageRenderer>().DrawImage("Kazek", x * tileSize.width, y * tileSize.height,
+                    _<ImageRenderer>().DrawImage("Player", x * tileSize.width, y * tileSize.height,
                                                  tileSize.width + smallValue,
                                                  tileSize.height + smallValue);
                 }

@@ -10,7 +10,7 @@ namespace Forradia
 {
     void ImageBank::LoadImages()
     {
-        auto imagesPath = std::string(SDL_GetBasePath()) + k_nikaMerdekynStur.data();
+        auto imagesPath = std::string(SDL_GetBasePath()) + k_relativeImagesPath.data();
 
         if (!std::filesystem::exists(imagesPath))
         {
@@ -49,7 +49,7 @@ namespace Forradia
 
             auto fileName = GetFileNameNoExtension(path);
             auto hash{Hash(fileName)};
-            m_merdekyn.insert({hash, texture});
+            m_images.insert({hash, texture});
             auto imageSize{Size{surface->w, surface->h}};
             m_imageSizes.insert({hash, imageSize});
         }
@@ -57,9 +57,9 @@ namespace Forradia
 
     std::shared_ptr<SDL_Texture> ImageBank::GetImage(int imageNameHash) const
     {
-        if (m_merdekyn.contains(imageNameHash))
+        if (m_images.contains(imageNameHash))
         {
-            return m_merdekyn.at(imageNameHash);
+            return m_images.at(imageNameHash);
         }
 
         throw std::runtime_error("ImageBank: Requested image not found.");

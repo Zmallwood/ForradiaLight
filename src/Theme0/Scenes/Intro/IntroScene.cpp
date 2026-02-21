@@ -22,7 +22,7 @@ namespace Forradia
 
     void IntroScene::RenderDerived()
     {
-        _<ImageRenderer>().DrawImage("FloratLunahNematin", 0.0f, 0.0f, 1.0f, 1.0f);
+        _<ImageRenderer>().DrawImage("DefaultSceneBackground", 0.0f, 0.0f, 1.0f, 1.0f);
 
         _<ImageRenderer>().DrawImage("ForradiaLogo", 0.3f, 0.2f, 0.4f, 0.2f);
     }

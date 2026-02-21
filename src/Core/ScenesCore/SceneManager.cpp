@@ -30,21 +30,21 @@ namespace Forradia
     {
         auto sceneNameHash{Hash(name)};
 
-        if (m_lunehyn.contains(sceneNameHash))
+        if (m_scenes.contains(sceneNameHash))
         {
             throw std::runtime_error("SceneManager: Scene to add already exists.");
         }
 
-        m_lunehyn.insert({sceneNameHash, luneh});
+        m_scenes.insert({sceneNameHash, luneh});
 
         luneh.Initialize();
     }
 
     void SceneManager::UpdateCurrentScene()
     {
-        if (m_lunehyn.contains(m_ehurdeLuneh))
+        if (m_scenes.contains(m_currentScene))
         {
-            m_lunehyn.at(m_ehurdeLuneh).Update();
+            m_scenes.at(m_currentScene).Update();
         }
         else
         {
@@ -54,9 +54,9 @@ namespace Forradia
 
     void SceneManager::RenderCurrentScene()
     {
-        if (m_lunehyn.contains(m_ehurdeLuneh))
+        if (m_scenes.contains(m_currentScene))
         {
-            m_lunehyn.at(m_ehurdeLuneh).Render();
+            m_scenes.at(m_currentScene).Render();
         }
         else
         {
@@ -66,11 +66,11 @@ namespace Forradia
 
     void SceneManager::GoToScene(std::string_view sceneName)
     {
-        m_ehurdeLuneh = Hash(sceneName);
+        m_currentScene = Hash(sceneName);
 
-        if (m_lunehyn.contains(m_ehurdeLuneh))
+        if (m_scenes.contains(m_currentScene))
         {
-            m_lunehyn.at(m_ehurdeLuneh).OnEnter();
+            m_scenes.at(m_currentScene).OnEnter();
         }
         else
         {

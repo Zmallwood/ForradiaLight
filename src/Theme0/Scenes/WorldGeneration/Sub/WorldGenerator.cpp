@@ -50,7 +50,7 @@ namespace Forradia
 
                 auto tile{worldArea->GetTile(x, y)};
 
-                tile->SetGround("KatenaNumbra");
+                tile->SetGround("GroundGrass");
             }
         }
     }
@@ -216,7 +216,7 @@ namespace Forradia
 
             auto tile{worldArea->GetTile(x, y)};
 
-            if (tile->GetGround() == Hash("KatenaNumbra"))
+            if (tile->GetGround() == Hash("GroundGrass"))
             {
                 auto objectsStack{tile->GetObjectsStack()};
 
@@ -243,7 +243,7 @@ namespace Forradia
 
             auto tile{worldArea->GetTile(x, y)};
 
-            if (tile->GetGround() == Hash("KatenaNumbra"))
+            if (tile->GetGround() == Hash("GroundGrass"))
             {
                 auto objectsStack{tile->GetObjectsStack()};
 
@@ -270,7 +270,7 @@ namespace Forradia
 
             auto tile{worldArea->GetTile(x, y)};
 
-            if (tile->GetGround() == Hash("KatenaNumbra"))
+            if (tile->GetGround() == Hash("GroundGrass"))
             {
                 auto objectsStack{tile->GetObjectsStack()};
 
