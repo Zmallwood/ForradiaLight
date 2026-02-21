@@ -22,6 +22,7 @@ namespace Forradia
         std::shared_ptr<GUISkillSlot> GetSkillSlot(int index) const;
 
       private:
-        std::vector<std::shared_ptr<GUISkillSlot>> m_skillSlots;
+        std::vector<std::shared_ptr<GUISkillSlot>>
+            m_skillSlots; ///< Contained skill slots in this set.
     };
 }

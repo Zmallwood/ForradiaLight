@@ -74,11 +74,14 @@ namespace Forradia
         }
 
       private:
-        int m_ground{0};
-        std::shared_ptr<ObjectsStack> m_objectsStack;
-        int m_darknessLevel{6};
-        std::shared_ptr<Creature> m_creature;
-        int m_skillNameHash{0};
-        int m_ticksSkillCasted{0};
+        int m_ground{0}; ///< Hash code of the ground type of this tile.
+        std::shared_ptr<ObjectsStack>
+            m_objectsStack;     ///< Stack containing the objects for this tile.
+        int m_darknessLevel{6}; ///< The current darkness level of this tile.
+        std::shared_ptr<Creature>
+            m_creature;         ///< The creature located on this tile, or nullptr if there is none.
+        int m_skillNameHash{0}; ///< The hash code of the name of the skill last casted on this
+                                ///< tile, or 0 if there is none.
+        int m_ticksSkillCasted{0}; ///< The ticks when the last skill was casted on this tile.
     };
 }

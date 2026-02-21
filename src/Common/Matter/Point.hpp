@@ -15,7 +15,7 @@ namespace Forradia
       public:
         bool operator==(const Point &other) const;
 
-        int x{0};
-        int y{0};
+        int x{0}; ///< X dimension.
+        int y{0}; ///< Y dimension.
     };
 }

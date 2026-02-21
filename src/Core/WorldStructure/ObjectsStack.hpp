@@ -27,6 +27,6 @@ namespace Forradia
         }
 
       private:
-        std::vector<std::shared_ptr<Object>> m_objects;
+        std::vector<std::shared_ptr<Object>> m_objects; ///< Objects in this stack.
     };
 }

@@ -19,8 +19,8 @@ namespace Forradia
         void Render();
 
       private:
-        int m_fps{0};
-        int m_frameCount{0};
-        int m_ticksLastUpdate{0};
+        int m_fps{0};             ///< Last calculated FPS value.
+        int m_framesCount{0};     ///< Number of frames counted for next FPS calculation update.
+        int m_ticksLastUpdate{0}; ///< Ticks when the last FPS calculation update occurred.
     };
 }

@@ -28,8 +28,9 @@ namespace Forradia
         std::string GetBackgroundImage() const override;
 
       private:
-        inline static const std::string k_backgroundImage{"GUISkillSlotBackground"};
-        std::string m_skillName{""};
-        int m_position{-1};
+        inline static const std::string k_backgroundImage{
+            "GUISkillSlotBackground"}; ///< Background image used in the rendering.
+        std::string m_skillName{""};   ///< Name of skill, if there is any.
+        int m_position{-1};            ///< Position of this slot in the skill slot set.
     };
 }

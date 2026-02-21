@@ -21,6 +21,6 @@ namespace Forradia
         bool IsPressedPickResult();
 
       private:
-        bool m_pressed{false};
+        bool m_pressed{false}; ///< State for if this button is being pressed.
     };
 }

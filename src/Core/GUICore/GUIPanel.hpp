@@ -32,6 +32,6 @@ namespace Forradia
       private:
         inline static const std::string k_defaultBackgroundImage{"GUIPanelBackground"};
 
-        SizeF m_size;
+        SizeF m_size; ///< Size in the canvas.
     };
 }

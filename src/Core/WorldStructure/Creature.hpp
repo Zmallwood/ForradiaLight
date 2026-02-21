@@ -21,6 +21,6 @@ namespace Forradia
         }
 
       private:
-        int m_type{0};
+        int m_type{0}; ///< Hash code of this creatures name.
     };
 }

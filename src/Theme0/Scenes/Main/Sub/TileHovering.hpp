@@ -21,6 +21,7 @@ namespace Forradia
         }
 
       private:
-        Point m_hoveredCoordinate{-1, -1};
+        Point m_hoveredCoordinate{
+            -1, -1}; ///< Coordinate of the tile, that is currently hovered with the mouse.
     };
 }

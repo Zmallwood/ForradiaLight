@@ -23,7 +23,9 @@ namespace Forradia
       private:
         void AddFont(FontSizes fontSize);
 
-        const std::string k_defaultFontPath{"./resources/fonts/PixeloidSans.ttf"};
-        std::unordered_map<FontSizes, std::shared_ptr<TTF_Font>> m_fonts;
+        const std::string k_defaultFontPath{
+            "./resources/fonts/PixeloidSans.ttf"}; ///< Relative font files path.
+        std::unordered_map<FontSizes, std::shared_ptr<TTF_Font>>
+            m_fonts; ///< Initialized font sizes.
     };
 }

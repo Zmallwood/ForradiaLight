@@ -35,7 +35,7 @@ namespace Forradia
         }
 
       private:
-        std::shared_ptr<MouseButton> m_leftButton;
-        std::shared_ptr<MouseButton> m_rightButton;
+        std::shared_ptr<MouseButton> m_leftButton;  ///< The left mouse button.
+        std::shared_ptr<MouseButton> m_rightButton; ///< The right mouse button.
     };
 }

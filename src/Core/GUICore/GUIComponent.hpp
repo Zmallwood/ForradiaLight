@@ -40,7 +40,8 @@ namespace Forradia
         }
 
       private:
-        std::vector<std::shared_ptr<GUIComponent>> m_components;
-        PointF m_position{0.0f, 0.0f};
+        std::vector<std::shared_ptr<GUIComponent>>
+            m_components;              ///< Child components of this component.
+        PointF m_position{0.0f, 0.0f}; ///< Position in the canvas.
     };
 }

@@ -13,7 +13,7 @@ namespace Forradia
     class PointF
     {
       public:
-        float x{0.0f};
-        float y{0.0f};
+        float x{0.0f}; ///< X component.
+        float y{0.0f}; ///< Y component.
     };
 }

@@ -20,6 +20,6 @@ namespace Forradia
 
         void PollEvents();
 
-        bool m_running{true};
+        bool m_running{true}; ///< Running state of the engine.
     };
 }

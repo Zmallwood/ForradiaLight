@@ -48,6 +48,6 @@ namespace Forradia
         }
 
       private:
-        std::shared_ptr<GUI> m_gui;
+        std::shared_ptr<GUI> m_gui; ///< GUI instance for this scene.
     };
 }

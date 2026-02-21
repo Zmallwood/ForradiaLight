@@ -13,7 +13,9 @@ namespace Forradia
     class Properties
     {
       public:
-        static constexpr Size k_worldAreaSize{100, 100};
-        static constexpr int k_numTileGridRows{21};
+        static constexpr Size k_worldAreaSize{100,
+                                              100}; ///< World area size used for the game world.
+        static constexpr int k_numTileGridRows{
+            21}; ///< Number of rows in the tile grid, also determines the number of columns.
     };
 }

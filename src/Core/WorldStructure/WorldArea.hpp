@@ -24,6 +24,7 @@ namespace Forradia
         std::shared_ptr<Tile> GetTile(int x, int y) const;
 
       private:
-        std::vector<std::vector<std::shared_ptr<Tile>>> m_tiles;
+        std::vector<std::vector<std::shared_ptr<Tile>>>
+            m_tiles; ///< 2D tile grid of this world area.
     };
 }

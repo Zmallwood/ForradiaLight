@@ -25,6 +25,7 @@ namespace Forradia
       private:
         static constexpr float k_lineHeight{0.03f};
 
-        std::vector<std::string> m_lines;
+        std::vector<std::string>
+            m_lines; ///< The lines that have been added, of which the last onces are printed.
     };
 }

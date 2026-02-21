@@ -27,6 +27,6 @@ namespace Forradia
         virtual std::string GetColorName() const;
 
       private:
-        SizeF m_size;
+        SizeF m_size; ///< Size in the canvas.
     };
 }

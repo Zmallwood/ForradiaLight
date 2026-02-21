@@ -13,11 +13,14 @@ namespace Forradia
     class Color
     {
       public:
+        /**
+         * Converts this color object to one of SDL type.
+         */
         SDL_Color ToSDLColor() const;
 
-        float r{0.0f};
-        float g{0.0f};
-        float b{0.0f};
-        float a{1.0f};
+        float r{0.0f}; ///< Red component.
+        float g{0.0f}; ///< Green component.
+        float b{0.0f}; ///< Blue component.
+        float a{1.0f}; ///< Alpha component.
     };
 }

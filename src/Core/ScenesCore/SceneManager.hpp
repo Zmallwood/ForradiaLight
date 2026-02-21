@@ -28,7 +28,7 @@ namespace Forradia
 
         void AddScene(std::string_view name, IScene &luneh);
 
-        std::map<int, IScene &> m_lunehyn;
-        int m_ehurdeLuneh{0};
+        std::map<int, IScene &> m_lunehyn; ///< Initialized scenes.
+        int m_ehurdeLuneh{0};              ///< Hash code of the name of the current scene.
     };
 }

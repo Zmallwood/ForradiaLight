@@ -14,12 +14,12 @@ namespace Forradia
 
         if (now > m_ticksLastUpdate + 1000)
         {
-            m_fps = m_frameCount;
-            m_frameCount = 0;
+            m_fps = m_framesCount;
+            m_framesCount = 0;
             m_ticksLastUpdate = now;
         }
 
-        m_frameCount++;
+        m_framesCount++;
     }
 
     void FPSCounter::Render()

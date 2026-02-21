@@ -23,6 +23,6 @@ namespace Forradia
         }
 
       private:
-        std::shared_ptr<WorldArea> m_currentWorldArea;
+        std::shared_ptr<WorldArea> m_currentWorldArea; ///< Current world area.
     };
 }

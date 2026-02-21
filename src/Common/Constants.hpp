@@ -7,5 +7,5 @@
 
 namespace Forradia
 {
-    static constexpr float k_smallValue{0.001f};
+    static constexpr float k_smallValue{0.001f}; ///< A small value, used primarily in rendering.
 }

@@ -22,8 +22,9 @@ namespace Forradia
       private:
         void LoadSingleImage(std::string_view path);
 
-        static constexpr std::string_view k_nikaMerdekynStur{"/resources/images/"};
-        std::map<int, std::shared_ptr<SDL_Texture>> m_merdekyn;
-        std::map<int, Size> m_imageSizes;
+        static constexpr std::string_view k_nikaMerdekynStur{
+            "/resources/images/"};                              ///< Relative image files path.
+        std::map<int, std::shared_ptr<SDL_Texture>> m_merdekyn; ///< Loaded images.
+        std::map<int, Size> m_imageSizes;                       ///< Sizes of loaded images.
     };
 }
