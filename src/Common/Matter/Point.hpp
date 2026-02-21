@@ -13,6 +13,12 @@ namespace Forradia
     class Point
     {
       public:
+        /**
+         * Checks equality with another point.
+         *
+         * @param other The other point to check equality with.
+         * @return True of equal, otherwise false.
+         */
         bool operator==(const Point &other) const;
 
         int x{0}; ///< X dimension.

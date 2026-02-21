@@ -17,7 +17,7 @@ namespace Forradia
         return _<Player>().GetHunger();
     }
 
-    std::string GUIHungerMeter::GetColorName() const
+    std::string GUIHungerMeter::GetFilledColorName() const
     {
         return "Green";
     }

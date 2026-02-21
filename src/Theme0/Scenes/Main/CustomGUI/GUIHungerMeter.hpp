@@ -20,6 +20,6 @@ namespace Forradia
       protected:
         virtual float GetMeterProgress() override;
 
-        virtual std::string GetColorName() const override;
+        virtual std::string GetFilledColorName() const override;
     };
 }

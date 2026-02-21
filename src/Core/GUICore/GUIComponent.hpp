@@ -13,23 +13,54 @@ namespace Forradia
     class GUIComponent
     {
       public:
+        /**
+         * Default constructor.
+         */
         GUIComponent() = default;
 
+        /**
+         * Constructor.
+         *
+         * @param x X position.
+         * @param y Y position.
+         */
         GUIComponent(float x, float y);
 
+        /**
+         * Updates this GUI component.
+         */
         void Update();
 
+        /**
+         * Renders this GUI component.
+         */
         void Render();
 
+        /**
+         * Adds a child component to this component.
+         *
+         * @param component The child component to add.
+         */
         void AddComponent(std::shared_ptr<GUIComponent> component);
 
+        /**
+         * Sets the y position of this GUI component to a new value.
+         *
+         * @param y New y position value.
+         */
         void SetYPosition(float y);
 
       protected:
+        /**
+         * Update logic that is defined in inheriting classes.
+         */
         virtual void UpdateDerived()
         {
         }
 
+        /**
+         * Render logic that is defined in inheriting classes.
+         */
         virtual void RenderDerived()
         {
         }

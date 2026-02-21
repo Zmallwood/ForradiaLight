@@ -7,6 +7,12 @@
 
 namespace Forradia
 {
+    /**
+     * Returns a singleton of a class as a pointer.
+     *
+     * @tparam T Type to get singleton of.
+     * @return Singleton pointer.
+     */
     template <class T>
     std::shared_ptr<T> GetSingletonPtr()
     {
@@ -15,6 +21,12 @@ namespace Forradia
         return instance;
     }
 
+    /**
+     * Returns a singleton of a class as a reference.
+     *
+     * @tparam T Type to get singleton of.
+     * @return Singleton reference.
+     */
     template <class T>
     T &_()
     {

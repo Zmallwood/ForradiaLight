@@ -15,13 +15,34 @@ namespace Forradia
     class GUIPanel : public GUIComponent
     {
       public:
+        /**
+         * Constructor.
+         *
+         * @param x X position.
+         * @param y Y position.
+         * @param width Width.
+         * @param height Height.
+         */
         GUIPanel(float x, float y, float width, float height);
 
+        /**
+         * Gets the height of this GUI panel.
+         *
+         * @return The height.
+         */
         float GetHeight() const;
 
       protected:
+        /**
+         * Render logic specific to the GUIPanel.
+         */
         virtual void RenderDerived() override;
 
+        /**
+         * Gets the background image name.
+         *
+         * @return The background image name.
+         */
         virtual std::string GetBackgroundImage() const;
 
         auto GetSize() const

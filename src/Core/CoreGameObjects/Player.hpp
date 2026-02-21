@@ -13,24 +13,65 @@ namespace Forradia
     class Player
     {
       public:
+        /**
+         * Initializes the played.
+         */
         void Initialize();
 
+        /**
+         * Move the player north in the game world.
+         */
         void MoveNorth();
 
+        /**
+         * Move the player east in the game world.
+         */
         void MoveEast();
 
+        /**
+         * Move the player south in the game world.
+         */
         void MoveSouth();
 
+        /**
+         * Move the player west in the game world.
+         */
         void MoveWest();
 
+        /**
+         * Add an amount to the players experience.
+         *
+         * @param value Amount of experience to add.
+         */
         void AddExperience(int value);
 
+        /**
+         * Gets the IsHungry-state.
+         *
+         * @return True if is hungry, otherwise false.
+         */
         bool IsHungry() const;
 
+        /**
+         * Gets the IsThirsty-state.
+         *
+         * @return True if is thirsty, otherwise false.
+         */
         bool IsThirsty() const;
 
+        /**
+         * Gets the movement speed, which can be either normal or weakened.
+         *
+         * @return The movement speed.
+         */
         float GetMovementSpeed() const;
 
+        /**
+         * Apply the players aura to the world.
+         *
+         * @param affectPlayer Decides if the players experience, hunger, and thirst values
+         * should be affect by this function when called.
+         */
         void ApplyAuraToWorld(bool affectPlayer = true);
 
         auto GetPosition() const
@@ -119,12 +160,15 @@ namespace Forradia
         }
 
       private:
+        /**
+         * Makes sure the player is located on a suitable location, i.e. one that is not water.
+         */
         void MakeIsOnSuitableLocation();
 
         Point m_position{50, 50};              ///< Position in the world area.
         int m_ticksLastMove{0};                ///< Ticks since last move in the game world.
         float m_normalMovementSpeed{3.5f};     ///< Movement speed when not in weakened state.
-        float m_weakMovementSpeed{1.0f};       ///< Movement speed in weakend state.
+        float m_weakMovementSpeed{1.0f};       ///< Movement speed in weakened state.
         int m_auraSize{2};                     ///< Size of the aura.
         Point m_destinationCoordinate{-1, -1}; ///< Destination coordinate for movement.
         int m_experience{0};                   ///< Experience points.
