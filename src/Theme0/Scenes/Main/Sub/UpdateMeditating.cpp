@@ -29,8 +29,11 @@ namespace Forradia
 
                 _<Player>().SetAuraStrength(_<Player>().GetAuraStrength() + 0.01f);
 
-                _<GUITextConsole>().PrintLine("You are meditating. Aura strength: " +
-                                              std::to_string(_<Player>().GetAuraStrength()));
+                std::stringstream auraStrengthText;
+                auraStrengthText << "Aura strength: " << std::fixed << std::setprecision(3)
+                                 << _<Player>().GetAuraStrength();
+
+                _<GUITextConsole>().PrintLine("You are meditating. " + auraStrengthText.str());
 
                 _<Player>().ApplyAuraToWorld(false);
             }

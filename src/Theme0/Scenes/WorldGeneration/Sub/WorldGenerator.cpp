@@ -429,5 +429,34 @@ namespace Forradia
                 tile->SetCreature(newCreature);
             }
         }
+
+        auto numRedBirds{100};
+
+        for (auto i = 0; i < numRedBirds; i++)
+        {
+            auto x{rand() % size.width};
+            auto y{rand() % size.height};
+
+            if (!worldArea->IsValidTile(x, y))
+            {
+                continue;
+            }
+
+            auto tile{worldArea->GetTile(x, y)};
+
+            if (tile->GetGround() != Hash("GroundWater"))
+            {
+                if (tile->GetObjectsStack()->GetSize() > 0)
+                {
+                    continue;
+                }
+
+                auto newCreature{std::make_shared<Creature>("CreatureRedBird")};
+
+                worldArea->GetCreaturesMirrorRef()[newCreature] = {x, y};
+
+                tile->SetCreature(newCreature);
+            }
+        }
     }
 }

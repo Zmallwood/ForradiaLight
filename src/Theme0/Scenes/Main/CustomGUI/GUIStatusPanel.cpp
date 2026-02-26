@@ -35,8 +35,11 @@ namespace Forradia
 
         _<TextRenderer>().DrawString("Thirst", FontSizes::_14, 0.015f, 0.11f);
 
-        _<TextRenderer>().DrawString("Aura strength: " +
-                                         std::to_string(_<Player>().GetAuraStrength()),
-                                     FontSizes::_14, 0.015f, 0.14f);
+        std::stringstream auraStrengthText;
+        auraStrengthText << "Aura strength: " << std::fixed << std::setprecision(3)
+                         << _<Player>().GetAuraStrength();
+
+        _<TextRenderer>().DrawString("Aura strength: " + auraStrengthText.str(), FontSizes::_14,
+                                     0.015f, 0.14f);
     }
 }
