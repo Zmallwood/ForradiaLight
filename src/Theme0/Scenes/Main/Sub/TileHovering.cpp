@@ -17,8 +17,8 @@ namespace Forradia
 
         auto tileSize{CalcTileSize()};
 
-        auto tileX{static_cast<int>(mousePosition.x / tileSize.width + 0.5f)};
-        auto tileY{static_cast<int>(mousePosition.y / tileSize.height + 0.5f)};
+        auto tileX{static_cast<int>(mousePosition.x / tileSize.width + 1.0f)};
+        auto tileY{static_cast<int>(mousePosition.y / tileSize.height + 1.0f)};
 
         auto playerPosition{_<Player>().GetPosition()};
 

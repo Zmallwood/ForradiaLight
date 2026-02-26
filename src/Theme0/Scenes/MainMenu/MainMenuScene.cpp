@@ -19,6 +19,8 @@ namespace Forradia
         GetGUI()->AddComponent(GetSingletonPtr<GUITextConsole>());
 
         GetGUI()->AddComponent(std::make_shared<GUIPanel>(0.4f, 0.4f, 0.2f, 0.2f));
+
+        _<GUITextConsole>().PrintLine("Game started.");
     }
 
     void MainMenuScene::OnEnterDerived()
