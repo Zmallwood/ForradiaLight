@@ -54,45 +54,7 @@ namespace Forradia
 
         Point newPosition{m_position.x, m_position.y - 1};
 
-        auto worldArea{_<World>().GetCurrentWorldArea()};
-
-        if (!worldArea)
-        {
-            throw std::runtime_error("Player: Current world area doesn't exist.");
-        }
-
-        auto tile{worldArea->GetTile(newPosition.x, newPosition.y)};
-
-        auto objectsStack{tile->GetObjectsStack()};
-
-        if (objectsStack)
-        {
-            if (objectsStack->HasObjectOfType("ObjectTree1") ||
-                objectsStack->HasObjectOfType("ObjectTree2") ||
-                objectsStack->HasObjectOfType("ObjectBush1") ||
-                objectsStack->HasObjectOfType("ObjectStoneBoulder"))
-            {
-                return;
-            }
-        }
-
-        if (tile->GetGround() == Hash("GroundWater"))
-        {
-            return;
-        }
-
-        m_position = newPosition;
-
-        if (m_ticksStartMeditating > 0)
-        {
-            m_ticksStartMeditating = 0;
-
-            _<GUITextConsole>().PrintLine("You stop meditating.");
-        }
-
-        m_auraStrength = std::max(m_auraStrength - 0.005f, 0.0f);
-
-        ApplyAuraToWorld();
+        MoveToNewPosition(newPosition);
     }
 
     void Player::MoveEast()
@@ -104,45 +66,7 @@ namespace Forradia
 
         Point newPosition{m_position.x + 1, m_position.y};
 
-        auto worldArea{_<World>().GetCurrentWorldArea()};
-
-        if (!worldArea)
-        {
-            throw std::runtime_error("Player: Current world area doesn't exist.");
-        }
-
-        auto tile{worldArea->GetTile(newPosition.x, newPosition.y)};
-
-        auto objectsStack{tile->GetObjectsStack()};
-
-        if (objectsStack)
-        {
-            if (objectsStack->HasObjectOfType("ObjectTree1") ||
-                objectsStack->HasObjectOfType("ObjectTree2") ||
-                objectsStack->HasObjectOfType("ObjectBush1") ||
-                objectsStack->HasObjectOfType("ObjectStoneBoulder"))
-            {
-                return;
-            }
-        }
-
-        if (tile->GetGround() == Hash("GroundWater"))
-        {
-            return;
-        }
-
-        m_position = newPosition;
-
-        if (m_ticksStartMeditating > 0)
-        {
-            m_ticksStartMeditating = 0;
-
-            _<GUITextConsole>().PrintLine("You stop meditating.");
-        }
-
-        m_auraStrength = std::max(m_auraStrength - 0.005f, 0.0f);
-
-        ApplyAuraToWorld();
+        MoveToNewPosition(newPosition);
     }
 
     void Player::MoveSouth()
@@ -154,45 +78,7 @@ namespace Forradia
 
         Point newPosition{m_position.x, m_position.y + 1};
 
-        auto worldArea{_<World>().GetCurrentWorldArea()};
-
-        if (!worldArea)
-        {
-            throw std::runtime_error("Player: Current world area doesn't exist.");
-        }
-
-        auto tile{worldArea->GetTile(newPosition.x, newPosition.y)};
-
-        auto objectsStack{tile->GetObjectsStack()};
-
-        if (objectsStack)
-        {
-            if (objectsStack->HasObjectOfType("ObjectTree1") ||
-                objectsStack->HasObjectOfType("ObjectTree2") ||
-                objectsStack->HasObjectOfType("ObjectBush1") ||
-                objectsStack->HasObjectOfType("ObjectStoneBoulder"))
-            {
-                return;
-            }
-        }
-
-        if (tile->GetGround() == Hash("GroundWater"))
-        {
-            return;
-        }
-
-        m_position = newPosition;
-
-        if (m_ticksStartMeditating > 0)
-        {
-            m_ticksStartMeditating = 0;
-
-            _<GUITextConsole>().PrintLine("You stop meditating.");
-        }
-
-        m_auraStrength = std::max(m_auraStrength - 0.005f, 0.0f);
-
-        ApplyAuraToWorld();
+        MoveToNewPosition(newPosition);
     }
 
     void Player::MoveWest()
@@ -204,6 +90,60 @@ namespace Forradia
 
         Point newPosition{m_position.x - 1, m_position.y};
 
+        MoveToNewPosition(newPosition);
+    }
+
+    void Player::MoveNorthEast()
+    {
+        if (m_position.y <= 0 || m_position.x >= Properties::k_worldAreaSize.width - 1)
+        {
+            return;
+        }
+
+        Point newPosition{m_position.x + 1, m_position.y - 1};
+
+        MoveToNewPosition(newPosition);
+    }
+
+    void Player::MoveSouthEast()
+    {
+        if (m_position.y >= Properties::k_worldAreaSize.height - 1 ||
+            m_position.x >= Properties::k_worldAreaSize.width - 1)
+        {
+            return;
+        }
+
+        Point newPosition{m_position.x + 1, m_position.y + 1};
+
+        MoveToNewPosition(newPosition);
+    }
+
+    void Player::MoveSouthWest()
+    {
+        if (m_position.y >= Properties::k_worldAreaSize.height - 1 || m_position.x <= 0)
+        {
+            return;
+        }
+
+        Point newPosition{m_position.x - 1, m_position.y + 1};
+
+        MoveToNewPosition(newPosition);
+    }
+
+    void Player::MoveNorthWest()
+    {
+        if (m_position.y <= 0 || m_position.x <= 0)
+        {
+            return;
+        }
+
+        Point newPosition{m_position.x - 1, m_position.y - 1};
+
+        MoveToNewPosition(newPosition);
+    }
+
+    void Player::MoveToNewPosition(Point newPosition)
+    {
         auto worldArea{_<World>().GetCurrentWorldArea()};
 
         if (!worldArea)

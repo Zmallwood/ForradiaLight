@@ -50,22 +50,35 @@ namespace Forradia
             auto dx{destinationCoordinate.x - currentCoordinate.x};
             auto dy{destinationCoordinate.y - currentCoordinate.y};
 
-            if (dy < 0)
+            if (dx > 0 && dy < 0)
+            {
+                _<Player>().MoveNorthEast();
+            }
+            else if (dx > 0 && dy > 0)
+            {
+                _<Player>().MoveSouthEast();
+            }
+            else if (dx < 0 && dy > 0)
+            {
+                _<Player>().MoveSouthWest();
+            }
+            else if (dx < 0 && dy < 0)
+            {
+                _<Player>().MoveNorthWest();
+            }
+            else if (dy < 0)
             {
                 _<Player>().MoveNorth();
             }
-
-            if (dx > 0)
+            else if (dx > 0)
             {
                 _<Player>().MoveEast();
             }
-
-            if (dy > 0)
+            else if (dy > 0)
             {
                 _<Player>().MoveSouth();
             }
-
-            if (dx < 0)
+            else if (dx < 0)
             {
                 _<Player>().MoveWest();
             }

@@ -39,22 +39,35 @@ namespace Forradia
                 _<GUITextConsole>().PrintLine("You are thirsty and are moving slower.");
             }
 
-            if (upPressed || wPressed)
+            if ((upPressed || wPressed) && (rightPressed || dPressed))
+            {
+                _<Player>().MoveNorthEast();
+            }
+            else if ((downPressed || sPressed) && (rightPressed || dPressed))
+            {
+                _<Player>().MoveSouthEast();
+            }
+            else if ((downPressed || sPressed) && (leftPressed || aPressed))
+            {
+                _<Player>().MoveSouthWest();
+            }
+            else if ((upPressed || wPressed) && (leftPressed || aPressed))
+            {
+                _<Player>().MoveNorthWest();
+            }
+            else if (upPressed || wPressed)
             {
                 _<Player>().MoveNorth();
             }
-
-            if (rightPressed || dPressed)
+            else if (rightPressed || dPressed)
             {
                 _<Player>().MoveEast();
             }
-
-            if (downPressed || sPressed)
+            else if (downPressed || sPressed)
             {
                 _<Player>().MoveSouth();
             }
-
-            if (leftPressed || aPressed)
+            else if (leftPressed || aPressed)
             {
                 _<Player>().MoveWest();
             }

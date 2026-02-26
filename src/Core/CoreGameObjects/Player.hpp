@@ -38,6 +38,14 @@ namespace Forradia
          */
         void MoveWest();
 
+        void MoveNorthEast();
+
+        void MoveSouthEast();
+
+        void MoveSouthWest();
+
+        void MoveNorthWest();
+
         void StartMeditating();
 
         void StopMeditating();
@@ -166,6 +174,8 @@ namespace Forradia
         }
 
       private:
+        void MoveToNewPosition(Point newPosition);
+
         /**
          * Makes sure the player is located on a suitable location, i.e. one that is not water.
          */
