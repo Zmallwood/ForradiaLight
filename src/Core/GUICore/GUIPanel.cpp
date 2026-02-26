@@ -15,6 +15,11 @@ namespace Forradia
 
     void GUIPanel::RenderDerived()
     {
+        if (!m_isVisible)
+        {
+            return;
+        }
+
         auto position{GetPosition()};
 
         _<ImageRenderer>().DrawImage(GetBackgroundImage(), position.x, position.y, m_size.width,

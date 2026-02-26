@@ -19,6 +19,8 @@
 #include "Sub/UpdateMeditating.hpp"
 #include "Sub/UpdateCreaturesMovement.hpp"
 #include "Core/GUICore/GUIButton.hpp"
+#include "Sub/UpdateKeyboardHotkeys.hpp"
+#include "CustomGUI/GUIInventoryWindow.hpp"
 
 namespace Forradia
 {
@@ -42,6 +44,8 @@ namespace Forradia
         GetGUI()->AddComponent(std::make_shared<GUIButton>(
             "", 0.78f, 0.86f, 0.05f, ConvertWidthToHeight(0.05f), [this]() {},
             "GUIButtonInventoryBackground", "GUIButtonInventoryHoveredBackground"));
+
+        GetGUI()->AddComponent(GetSingletonPtr<GUIInventoryWindow>());
     }
 
     void MainScene::OnEnterDerived()
@@ -67,6 +71,8 @@ namespace Forradia
         UpdateMeditating();
 
         UpdateCreaturesMovement();
+
+        UpdateKeyboardHotkeys();
     }
 
     void MainScene::RenderDerived()
