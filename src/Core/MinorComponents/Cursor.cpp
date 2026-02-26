@@ -23,7 +23,7 @@ namespace Forradia
 
         auto cursorHeight{ConvertWidthToHeight(cursorWidth)};
 
-        imageRenderer.DrawImage("CursorDefault", mousePosition.x, mousePosition.y, cursorWidth,
+        imageRenderer.DrawImage("CursorDefault", mousePosition.x - cursorWidth / 2, mousePosition.y - cursorHeight / 2, cursorWidth,
                                 cursorHeight);
     }
 
