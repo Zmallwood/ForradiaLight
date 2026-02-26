@@ -212,6 +212,10 @@ namespace Forradia
                                                  tileSize.height + smallValue);
                 }
 
+                auto brightness{1.0f - darknessLevel / 10.0f};
+
+                Color objectColor{brightness, brightness, brightness};
+
                 for (auto object : objectsStack->GetObjects())
                 {
                     if (!object)
@@ -234,7 +238,7 @@ namespace Forradia
                     auto imageY{y * tileSize.height + tileSize.height - imageHeight};
 
                     _<ImageRenderer>().DrawImage(object->GetType(), imageX, imageY, imageWidth,
-                                                 imageHeight);
+                                                 imageHeight, objectColor);
                 }
 
                 auto creature{tile->GetCreature()};

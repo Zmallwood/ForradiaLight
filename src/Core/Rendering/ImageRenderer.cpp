@@ -9,7 +9,8 @@
 
 namespace Forradia
 {
-    void ImageRenderer::DrawImage(int imageNameHash, float x, float y, float width, float height)
+    void ImageRenderer::DrawImage(int imageNameHash, float x, float y, float width, float height,
+                                  Color color)
     {
         auto canvasSize{GetCanvasSize()};
 
@@ -34,12 +35,16 @@ namespace Forradia
         destination.w = width * canvasSize.width;
         destination.h = height * canvasSize.height;
 
+        auto sdlColor{color.ToSDLColor()};
+
+        SDL_SetTextureColorMod(texture.get(), sdlColor.r, sdlColor.g, sdlColor.b);
         SDL_RenderCopy(renderer.get(), texture.get(), nullptr, &destination);
+        SDL_SetTextureColorMod(texture.get(), 255, 255, 255);
     }
 
     void ImageRenderer::DrawImage(std::string_view imageName, float x, float y, float width,
-                                  float height)
+                                  float height, Color color)
     {
-        DrawImage(Hash(imageName), x, y, width, height);
+        DrawImage(Hash(imageName), x, y, width, height, color);
     }
 }

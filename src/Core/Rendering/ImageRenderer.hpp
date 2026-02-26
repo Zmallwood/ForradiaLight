@@ -13,8 +13,10 @@ namespace Forradia
     class ImageRenderer
     {
       public:
-        void DrawImage(int imageNameHash, float x, float y, float width, float height);
+        void DrawImage(int imageNameHash, float x, float y, float width, float height,
+                       Color color = Palette::White);
 
-        void DrawImage(std::string_view imageName, float x, float y, float width, float height);
+        void DrawImage(std::string_view imageName, float x, float y, float width, float height,
+                       Color color = Palette::White);
     };
 }
