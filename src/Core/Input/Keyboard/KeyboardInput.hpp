@@ -14,14 +14,41 @@ namespace Forradia
     class KeyboardInput
     {
       public:
+        /**
+         * Registers a key as have been pressed.
+         *
+         * @param key Key to register.
+         */
         void RegisterKeyPress(SDL_Keycode key);
 
+        /**
+         * Registers a key as have been released.
+         *
+         * @param key Key to register.
+         */
         void RegisterKeyRelease(SDL_Keycode key);
 
+        /**
+         * Tells if any key is currently being pressed, and resets the state.
+         *
+         * @return True if any key is being pressed, otherwise false.
+         */
         bool AnyKeyIsPressedPickResult();
 
+        /**
+         * Tells if a specific key is currently being pressed, without resetting the state.
+         *
+         * @param key Key to check.
+         * @return True if the key is being pressed, otherwise false.
+         */
         bool KeyIsPressed(SDL_Keycode key);
 
+        /**
+         * Tells if a specific key is currently being pressed, and resets the state.
+         *
+         * @param key Key to check.
+         * @return True if the key is being pressed, otherwise false.
+         */
         bool KeyIsPressedPickResult(SDL_Keycode key);
 
       private:

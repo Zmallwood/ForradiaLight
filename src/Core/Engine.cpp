@@ -31,12 +31,6 @@ namespace Forradia
 
             while (m_running)
             {
-                PollEvents();
-
-                _<SceneManager>().UpdateCurrentScene();
-
-                _<FPSCounter>().Update();
-
                 _<SDLDevice>().ClearCanvas();
 
                 _<SceneManager>().RenderCurrentScene();
@@ -46,6 +40,15 @@ namespace Forradia
                 _<Cursor>().Render();
 
                 _<SDLDevice>().PresentCanvas();
+
+                // Poll events and do the updating at end of iteration to make sure that the
+                // m_running check is done before rendering.
+
+                PollEvents();
+
+                _<SceneManager>().UpdateCurrentScene();
+
+                _<FPSCounter>().Update();
             }
 
             std::cout << "Exiting game." << std::endl;

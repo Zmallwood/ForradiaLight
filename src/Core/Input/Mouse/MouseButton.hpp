@@ -14,10 +14,21 @@ namespace Forradia
     class MouseButton
     {
       public:
+        /**
+         * Registers this mouse button as have been pressed.
+         */
         void RegisterPress();
 
+        /**
+         * Registers this mouse button as have been released.
+         */
         void RegisterRelease();
 
+        /**
+         * Tells if this mouse button is currently being pressed, and resets the state.
+         *
+         * @return True if this button is being pressed, otherwise false.
+         */
         bool IsPressedPickResult();
 
       private:
