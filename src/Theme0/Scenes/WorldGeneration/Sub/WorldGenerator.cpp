@@ -256,9 +256,9 @@ namespace Forradia
             }
         }
 
-        auto numObject1s{200};
+        auto numBush1s{200};
 
-        for (auto i = 0; i < numObject1s; i++)
+        for (auto i = 0; i < numBush1s; i++)
         {
             auto x{rand() % size.width};
             auto y{rand() % size.height};
@@ -280,6 +280,33 @@ namespace Forradia
                 }
 
                 objectsStack->AddObject("ObjectBush1");
+            }
+        }
+
+        auto numBush2s{200};
+
+        for (auto i = 0; i < numBush1s; i++)
+        {
+            auto x{rand() % size.width};
+            auto y{rand() % size.height};
+
+            if (!worldArea->IsValidTile(x, y))
+            {
+                continue;
+            }
+
+            auto tile{worldArea->GetTile(x, y)};
+
+            if (tile->GetGround() == Hash("GroundGrass"))
+            {
+                auto objectsStack{tile->GetObjectsStack()};
+
+                if (!objectsStack)
+                {
+                    throw std::runtime_error("WorldGenerator: Objects stack doesn't exist.");
+                }
+
+                objectsStack->AddObject("ObjectBush2");
             }
         }
 

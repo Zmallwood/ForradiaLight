@@ -30,7 +30,7 @@ namespace Forradia
     }
 
     void TextRenderer::DrawString(std::string_view text, FontSizes fontSize, float x, float y,
-                                  Color color)
+                                  Color color, bool centerAlign)
     {
         auto font{m_fonts[fontSize]};
 
@@ -64,6 +64,12 @@ namespace Forradia
 
         SDL_Rect rect{static_cast<int>(position.x * canvasSize.width),
                       static_cast<int>(position.y * canvasSize.height), surface->w, surface->h};
+
+        if (centerAlign)
+        {
+            rect.x -= rect.w / 2.0f;
+            rect.y -= rect.h / 2.0f;
+        }
 
         SDL_RenderCopy(_<SDLDevice>().GetRenderer().get(), texture.get(), nullptr, &rect);
     }

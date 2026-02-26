@@ -11,6 +11,7 @@
 #include "Core/GUICore/GUI.hpp"
 #include "Core/GUICore/GUIPanel.hpp"
 #include "Core/GUICore/GUITextConsole.hpp"
+#include "Core/GUICore/GUIButton.hpp"
 
 namespace Forradia
 {
@@ -19,6 +20,9 @@ namespace Forradia
         GetGUI()->AddComponent(GetSingletonPtr<GUITextConsole>());
 
         GetGUI()->AddComponent(std::make_shared<GUIPanel>(0.4f, 0.4f, 0.2f, 0.2f));
+
+        GetGUI()->AddComponent(
+            std::make_shared<GUIButton>("Start Game", 0.45f, 0.45f, 0.1f, 0.04f, [this]() {}));
 
         _<GUITextConsole>().PrintLine("Game started.");
     }

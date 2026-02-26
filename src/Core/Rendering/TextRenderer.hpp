@@ -18,7 +18,7 @@ namespace Forradia
         void Initialize();
 
         void DrawString(std::string_view text, FontSizes fontSize, float x, float y,
-                        Color color = Palette::Wheat);
+                        Color color = Palette::Wheat, bool centerAlign = false);
 
       private:
         void AddFont(FontSizes fontSize);
