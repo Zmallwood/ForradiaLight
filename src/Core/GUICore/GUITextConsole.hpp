@@ -34,7 +34,7 @@ namespace Forradia
         void RenderDerived() override;
 
       private:
-        static constexpr float k_lineHeight{0.03f}; ///< Line height in the canvas.
+        static constexpr float k_lineHeight{0.02f}; ///< Line height in the canvas.
         std::vector<std::string>
             m_lines; ///< The lines that have been added, of which the last onces are printed.
     };

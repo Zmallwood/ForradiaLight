@@ -23,20 +23,20 @@ namespace Forradia
     {
         GUIPanel::RenderDerived();
 
-        _<TextRenderer>().DrawString(_<Player>().GetName(), FontSizes::_20, 0.03f, 0.03f);
+        _<TextRenderer>().DrawString(_<Player>().GetName(), FontSizes::_20, 0.015f, 0.01f);
 
         auto playerLevel{CalculateCurrentLevel(_<Player>().GetExperience())};
 
         std::string levelText{"Level " + std::to_string(playerLevel)};
 
-        _<TextRenderer>().DrawString(levelText, FontSizes::_26, 0.03f, 0.07f, Palette::Gold);
+        _<TextRenderer>().DrawString(levelText, FontSizes::_26, 0.015f, 0.04f, Palette::Gold);
 
-        _<TextRenderer>().DrawString("Hunger", FontSizes::_20, 0.03f, 0.12f);
+        _<TextRenderer>().DrawString("Hunger", FontSizes::_14, 0.015f, 0.08f);
 
-        _<TextRenderer>().DrawString("Thirst", FontSizes::_20, 0.03f, 0.15f);
+        _<TextRenderer>().DrawString("Thirst", FontSizes::_14, 0.015f, 0.11f);
 
         _<TextRenderer>().DrawString("Aura strength: " +
                                          std::to_string(_<Player>().GetAuraStrength()),
-                                     FontSizes::_20, 0.03f, 0.18f);
+                                     FontSizes::_14, 0.015f, 0.14f);
     }
 }

@@ -25,7 +25,7 @@ namespace Forradia
 
         auto size{GetSize()};
 
-        auto maxNumLines{static_cast<int>(size.height / k_lineHeight)};
+        auto maxNumLines{static_cast<int>(size.height / k_lineHeight) - 1};
 
         auto iStart{std::max(0, static_cast<int>(m_lines.size() - maxNumLines))};
         auto rowIndex{0};
@@ -39,7 +39,7 @@ namespace Forradia
 
             auto text{m_lines[line]};
 
-            _<TextRenderer>().DrawString(text, FontSizes::_20, position.x + 0.01f,
+            _<TextRenderer>().DrawString(text, FontSizes::_14, position.x + 0.01f,
                                          position.y + 0.01f + rowIndex * k_lineHeight);
 
             rowIndex++;

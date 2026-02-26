@@ -12,6 +12,7 @@ namespace Forradia
      */
     enum class FontSizes
     {
+        _14 = 14, ///< Size 14.
         _20 = 20, ///< Size 20.
         _26 = 26  ///< Size 26.
     };

@@ -12,6 +12,7 @@ namespace Forradia
     {
         TTF_Init();
 
+        AddFont(FontSizes::_14);
         AddFont(FontSizes::_20);
         AddFont(FontSizes::_26);
     }
