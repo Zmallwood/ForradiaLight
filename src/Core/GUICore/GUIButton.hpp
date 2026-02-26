@@ -13,7 +13,9 @@ namespace Forradia
     {
       public:
         GUIButton(std::string_view text, float x, float y, float width, float height,
-                  std::function<void()> action);
+                  std::function<void()> action,
+                  std::string_view backgroundImage = "GUIButtonBackground",
+                  std::string_view hoveredBackgroundImage = "GUIButtonHoveredBackground");
 
       protected:
         void UpdateDerived() override;
@@ -23,8 +25,8 @@ namespace Forradia
         std::string GetBackgroundImage() const override;
 
       private:
-        inline static const std::string k_backgroundImage{"GUIButtonBackground"};
-        inline static const std::string k_hoveredBackgroundImage{"GUIButtonHoveredBackground"};
+        const std::string k_backgroundImage{"GUIButtonBackground"};
+        const std::string k_hoveredBackgroundImage{"GUIButtonHoveredBackground"};
         std::string m_text;
         std::function<void()> m_action;
         bool m_hovered{false};

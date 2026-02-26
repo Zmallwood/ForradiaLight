@@ -32,6 +32,11 @@ namespace Forradia
     void TextRenderer::DrawString(std::string_view text, FontSizes fontSize, float x, float y,
                                   Color color, bool centerAlign)
     {
+        if (text.empty())
+        {
+            return;
+        }
+
         auto font{m_fonts[fontSize]};
 
         if (font == nullptr)

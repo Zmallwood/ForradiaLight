@@ -14,6 +14,8 @@ namespace Forradia
     class MouseButton
     {
       public:
+        void Reset();
+
         /**
          * Registers this mouse button as have been pressed.
          */

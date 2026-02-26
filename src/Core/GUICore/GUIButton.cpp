@@ -11,8 +11,10 @@
 namespace Forradia
 {
     GUIButton::GUIButton(std::string_view text, float x, float y, float width, float height,
-                         std::function<void()> action)
-        : GUIPanel(x, y, width, height), m_text(text), m_action(action)
+                         std::function<void()> action, std::string_view backgroundImage,
+                         std::string_view hoveredBackgroundImage)
+        : GUIPanel(x, y, width, height), m_text(text), m_action(action),
+          k_backgroundImage(backgroundImage), k_hoveredBackgroundImage(hoveredBackgroundImage)
     {
     }
 
@@ -35,6 +37,8 @@ namespace Forradia
             if (_<MouseInput>().GetLeftButton()->IsPressedLeaveResult())
             {
                 m_action();
+
+                _<MouseInput>().GetLeftButton()->Reset();
             }
         }
         else

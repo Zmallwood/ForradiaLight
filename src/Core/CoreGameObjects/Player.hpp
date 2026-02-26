@@ -38,6 +38,12 @@ namespace Forradia
          */
         void MoveWest();
 
+        void StartMeditating();
+
+        void StopMeditating();
+
+        void ToggleMeditating();
+
         /**
          * Add an amount to the players experience.
          *

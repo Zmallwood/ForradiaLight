@@ -245,6 +245,32 @@ namespace Forradia
         ApplyAuraToWorld();
     }
 
+    void Player::StartMeditating()
+    {
+        m_ticksStartMeditating = SDL_GetTicks();
+
+        _<GUITextConsole>().PrintLine("You start meditating.");
+    }
+
+    void Player::StopMeditating()
+    {
+        m_ticksStartMeditating = 0;
+
+        _<GUITextConsole>().PrintLine("You stop meditating.");
+    }
+
+    void Player::ToggleMeditating()
+    {
+        if (m_ticksStartMeditating == 0)
+        {
+            StartMeditating();
+        }
+        else
+        {
+            StopMeditating();
+        }
+    }
+
     void Player::AddExperience(int value)
     {
         auto levelBefore{CalculateCurrentLevel(m_experience)};

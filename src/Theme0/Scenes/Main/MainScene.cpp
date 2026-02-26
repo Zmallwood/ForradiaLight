@@ -18,6 +18,7 @@
 #include "Sub/UpdateSkillCasting.hpp"
 #include "Sub/UpdateMeditating.hpp"
 #include "Sub/UpdateCreaturesMovement.hpp"
+#include "Core/GUICore/GUIButton.hpp"
 
 namespace Forradia
 {
@@ -32,6 +33,11 @@ namespace Forradia
         GetGUI()->AddComponent(GetSingletonPtr<GUISkillSlotSet>());
 
         _<GUISkillSlotSet>().GetSkillSlot(0)->SetSkillName("LightArea");
+
+        GetGUI()->AddComponent(std::make_shared<GUIButton>(
+            "", 0.7f, 0.86f, 0.05f, ConvertWidthToHeight(0.05f),
+            [this]() { _<Player>().ToggleMeditating(); }, "GUIButtonMeditateBackground",
+            "GUIButtonMeditateHoveredBackground"));
     }
 
     void MainScene::OnEnterDerived()

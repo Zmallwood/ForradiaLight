@@ -18,18 +18,7 @@ namespace Forradia
 
         if (mPressed)
         {
-            if (_<Player>().GetTicksStartMeditating() == 0)
-            {
-                _<Player>().SetTicksStartMeditating(now);
-
-                _<GUITextConsole>().PrintLine("You start meditating.");
-            }
-            else
-            {
-                _<Player>().SetTicksStartMeditating(0);
-
-                _<GUITextConsole>().PrintLine("You stop meditating.");
-            }
+            _<Player>().ToggleMeditating();
         }
 
         if (_<Player>().GetTicksStartMeditating() > 0)
