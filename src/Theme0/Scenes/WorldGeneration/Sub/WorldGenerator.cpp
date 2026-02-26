@@ -357,6 +357,33 @@ namespace Forradia
                     throw std::runtime_error("WorldGenerator: Objects stack doesn't exist.");
                 }
 
+                objectsStack->AddObject("ObjectTallGrass");
+            }
+        }
+
+        auto numTallGrasses{200};
+
+        for (auto i = 0; i < numTallGrasses; i++)
+        {
+            auto x{rand() % size.width};
+            auto y{rand() % size.height};
+
+            if (!worldArea->IsValidTile(x, y))
+            {
+                continue;
+            }
+
+            auto tile{worldArea->GetTile(x, y)};
+
+            if (tile->GetGround() == Hash("GroundGrass"))
+            {
+                auto objectsStack{tile->GetObjectsStack()};
+
+                if (!objectsStack)
+                {
+                    throw std::runtime_error("WorldGenerator: Objects stack doesn't exist.");
+                }
+
                 objectsStack->AddObject("ObjectPinkFlower");
             }
         }

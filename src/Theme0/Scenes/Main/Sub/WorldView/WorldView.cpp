@@ -107,7 +107,8 @@ namespace Forradia
                                                  tileSize.height + smallValue);
                 }
 
-                if (xCoordinate == destinationCoordinate.x && yCoordinate == destinationCoordinate.y)
+                if (xCoordinate == destinationCoordinate.x &&
+                    yCoordinate == destinationCoordinate.y)
                 {
                     _<ImageRenderer>().DrawImage("TileDestination", x * tileSize.width,
                                                  y * tileSize.height, tileSize.width + smallValue,
@@ -119,6 +120,13 @@ namespace Forradia
                 if (!objectsStack)
                 {
                     throw std::runtime_error("WorldView: Objects stack doesn't exist.");
+                }
+
+                if (objectsStack->GetSize() > 0)
+                {
+                    _<ImageRenderer>().DrawImage("Shadow", x * tileSize.width, y * tileSize.height,
+                                                 tileSize.width + smallValue,
+                                                 tileSize.height + smallValue);
                 }
 
                 for (auto object : objectsStack->GetObjects())
