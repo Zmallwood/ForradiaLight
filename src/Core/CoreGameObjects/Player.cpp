@@ -284,6 +284,9 @@ namespace Forradia
     {
         if (m_auraStrength <= 0.00001f)
         {
+            m_hunger = std::min(m_hunger + 100 * 0.00001f, 1.0f);
+            m_thirst = std::min(m_thirst + 100 * 0.000007f, 1.0f);
+
             return;
         }
 
