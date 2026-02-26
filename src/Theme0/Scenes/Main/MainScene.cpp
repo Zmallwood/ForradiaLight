@@ -38,6 +38,10 @@ namespace Forradia
             "", 0.7f, 0.86f, 0.05f, ConvertWidthToHeight(0.05f),
             [this]() { _<Player>().ToggleMeditating(); }, "GUIButtonMeditateBackground",
             "GUIButtonMeditateHoveredBackground"));
+
+        GetGUI()->AddComponent(std::make_shared<GUIButton>(
+            "", 0.78f, 0.86f, 0.05f, ConvertWidthToHeight(0.05f), [this]() {},
+            "GUIButtonInventoryBackground", "GUIButtonInventoryHoveredBackground"));
     }
 
     void MainScene::OnEnterDerived()
