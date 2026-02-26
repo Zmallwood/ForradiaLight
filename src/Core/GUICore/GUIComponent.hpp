@@ -40,8 +40,9 @@ namespace Forradia
          * Adds a child component to this component.
          *
          * @param component The child component to add.
+         * @return The added component.
          */
-        void AddComponent(std::shared_ptr<GUIComponent> component);
+        std::shared_ptr<GUIComponent> AddComponent(std::shared_ptr<GUIComponent> component);
 
         /**
          * Sets the y position of this GUI component to a new value.
@@ -70,9 +71,21 @@ namespace Forradia
             return m_position;
         }
 
+        auto GetVisible() const
+        {
+            return m_isVisible;
+        }
+
+        void SetVisible(bool value)
+        {
+            m_isVisible = value;
+        }
+
       private:
         std::vector<std::shared_ptr<GUIComponent>>
-            m_components;              ///< Child components of this component.
-        PointF m_position{0.0f, 0.0f}; ///< Position in the canvas.
+            m_components;                ///< Child components of this component.
+        PointF m_position{0.0f, 0.0f};   ///< Position in the canvas.
+        GUIComponent *m_parent{nullptr}; ///< Parent component of this component.
+        bool m_isVisible{true};          ///< Whether the panel is visible.
     };
 }

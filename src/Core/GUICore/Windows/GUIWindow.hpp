@@ -9,6 +9,8 @@
 
 namespace Forradia
 {
+    class GUIWindowTitleBar;
+
     /**
      * Represents a window in the GUI.
      */
@@ -18,8 +20,5 @@ namespace Forradia
         GUIWindow(std::string_view title, float x, float y, float width, float height);
 
         void ToggleVisibility();
-
-      private:
-        std::string m_title; ///< The title of the window.
     };
 }

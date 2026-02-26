@@ -13,6 +13,16 @@ namespace Forradia
 
     void GUIComponent::Update()
     {
+        if (!GetVisible())
+        {
+            return;
+        }
+
+        if (m_parent && !m_parent->GetVisible())
+        {
+            return;
+        }
+
         UpdateDerived();
 
         for (const auto &component : m_components)
@@ -23,6 +33,16 @@ namespace Forradia
 
     void GUIComponent::Render()
     {
+        if (!GetVisible())
+        {
+            return;
+        }
+
+        if (m_parent && !m_parent->GetVisible())
+        {
+            return;
+        }
+
         RenderDerived();
 
         for (const auto &component : m_components)
@@ -31,9 +51,14 @@ namespace Forradia
         }
     }
 
-    void GUIComponent::AddComponent(std::shared_ptr<GUIComponent> component)
+    std::shared_ptr<GUIComponent>
+    GUIComponent::AddComponent(std::shared_ptr<GUIComponent> component)
     {
+        component->m_parent = this;
+
         m_components.push_back(component);
+
+        return component;
     }
 
     void GUIComponent::SetYPosition(float y)

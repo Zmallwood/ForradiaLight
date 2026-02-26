@@ -4,13 +4,16 @@
  */
 
 #include "GUIWindow.hpp"
+#include "GUIWindowTitleBar.hpp"
 
 namespace Forradia
 {
     GUIWindow::GUIWindow(std::string_view title, float x, float y, float width, float height)
-        : GUIPanel(x, y, width, height), m_title(title)
+        : GUIPanel(x, y, width, height)
     {
         SetVisible(false);
+
+        AddComponent(std::make_shared<GUIWindowTitleBar>(title));
     }
 
     void GUIWindow::ToggleVisibility()
