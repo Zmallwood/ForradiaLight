@@ -13,8 +13,8 @@ namespace Forradia
 
         m_window = std::shared_ptr<SDL_Window>(
             SDL_CreateWindow("Forradia", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 660, 660,
-                             SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE | SDL_WINDOW_MAXIMIZED |
-                                 SDL_WINDOW_FULLSCREEN_DESKTOP),
+                             SDL_WINDOW_RESIZABLE | SDL_WINDOW_FULLSCREEN_DESKTOP |
+                                 SDL_WINDOW_ALLOW_HIGHDPI),
             SDLDeleter());
 
         if (!m_window)
@@ -24,7 +24,9 @@ namespace Forradia
         }
 
         m_renderer = std::shared_ptr<SDL_Renderer>(
-            SDL_CreateRenderer(m_window.get(), -1, SDL_RENDERER_ACCELERATED), SDLDeleter());
+            SDL_CreateRenderer(m_window.get(), -1,
+                               SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC),
+            SDLDeleter());
 
         if (!m_renderer)
         {
@@ -54,5 +56,10 @@ namespace Forradia
         }
 
         SDL_RenderPresent(m_renderer.get());
+    }
+
+    void SDLDevice::Cleanup() const
+    {
+        SDL_Quit();
     }
 }

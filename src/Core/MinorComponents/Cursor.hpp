@@ -17,6 +17,8 @@ namespace Forradia
 
         void Render() const;
 
+        void Cleanup() const;
+
       private:
         static constexpr float k_cursorWidth{
             0.05f}; ///< The width of the cursor icon in the canvas.

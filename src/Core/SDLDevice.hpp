@@ -19,6 +19,8 @@ namespace Forradia
 
         void PresentCanvas();
 
+        void Cleanup() const;
+
         auto GetWindow() const
         {
             return m_window;

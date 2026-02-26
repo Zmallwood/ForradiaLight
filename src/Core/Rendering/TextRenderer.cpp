@@ -34,14 +34,29 @@ namespace Forradia
     {
         auto font{m_fonts[fontSize]};
 
+        if (font == nullptr)
+        {
+            throw std::runtime_error("TextRenderer: Font doesn't exist.");
+        }
+
         auto sdlColor{color.ToSDLColor()};
 
         auto surface{std::shared_ptr<SDL_Surface>(
             TTF_RenderText_Solid(font.get(), text.data(), sdlColor), SDLDeleter())};
 
+        if (surface == nullptr)
+        {
+            throw std::runtime_error("TextRenderer: Failed to create surface.");
+        }
+
         auto texture{std::shared_ptr<SDL_Texture>(
             SDL_CreateTextureFromSurface(_<SDLDevice>().GetRenderer().get(), surface.get()),
             SDLDeleter())};
+
+        if (texture == nullptr)
+        {
+            throw std::runtime_error("TextRenderer: Failed to create texture.");
+        }
 
         auto canvasSize{GetCanvasSize()};
 

@@ -14,6 +14,8 @@
 #include <set>
 #include <vector>
 #include <unordered_map>
+#include <fstream>
+#include <source_location>
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
@@ -30,3 +32,4 @@
 #include "Common/Matter/Colors.hpp"
 #include "Common/Utilities.hpp"
 #include "Common/Constants.hpp"
+#include "Common/Logger.hpp"

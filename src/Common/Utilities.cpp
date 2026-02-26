@@ -37,6 +37,11 @@ namespace Forradia
 
         auto window = _<SDLDevice>().GetWindow();
 
+        if (window == nullptr)
+        {
+            throw std::runtime_error("Utilities: Window doesn't exist to get canvas size.");
+        }
+
         SDL_GetWindowSize(window.get(), &canvasSize.width, &canvasSize.height);
 
         return canvasSize;

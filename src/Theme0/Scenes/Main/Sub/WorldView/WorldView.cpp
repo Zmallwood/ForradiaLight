@@ -66,7 +66,8 @@ namespace Forradia
                 {
                     std::string imageName{"GroundWater_"};
 
-                    auto waterAnimIndex{SDL_GetTicks() / 100 % 3};
+                    auto waterAnimIndex{(SDL_GetTicks() / 2 + 10 * xCoordinate * yCoordinate) /
+                                        100 % 3};
 
                     imageName += std::to_string(waterAnimIndex);
 

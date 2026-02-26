@@ -11,7 +11,7 @@
 namespace Forradia
 {
     GUISkillSlot::GUISkillSlot(int position)
-        : GUIPanel(0.45f + 0.07f * position, 0.88f, 0.05f, ConvertWidthToHeight(0.05f)),
+        : GUIPanel(0.45f + 0.045f * position, 0.88f, 0.04f, ConvertWidthToHeight(0.04f)),
           m_position(position)
     {
     }

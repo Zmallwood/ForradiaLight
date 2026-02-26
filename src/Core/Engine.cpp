@@ -19,6 +19,8 @@ namespace Forradia
     {
         try
         {
+            Log("Starting engine.", LogLevels::Info);
+
             Randomize();
 
             _<SDLDevice>().Initialize();
@@ -29,27 +31,50 @@ namespace Forradia
 
             _<Cursor>().Initialize();
 
+            Log("Entering main loop.", LogLevels::Info);
+
             while (m_running)
             {
-                _<SDLDevice>().ClearCanvas();
-
-                _<SceneManager>().RenderCurrentScene();
-
-                _<FPSCounter>().Render();
-
-                _<Cursor>().Render();
-
-                _<SDLDevice>().PresentCanvas();
-
-                // Poll events and do the updating at end of iteration to make sure that the
-                // m_running check is done before rendering.
+                Log("Polling events.", LogLevels::Info);
 
                 PollEvents();
 
+                Log("Updating current scene.", LogLevels::Info);
+
                 _<SceneManager>().UpdateCurrentScene();
 
+                Log("Updating FPS counter.", LogLevels::Info);
+
                 _<FPSCounter>().Update();
+
+                Log("Clearing canvas.", LogLevels::Info);
+
+                _<SDLDevice>().ClearCanvas();
+
+                Log("Rendering current scene.", LogLevels::Info);
+
+                _<SceneManager>().RenderCurrentScene();
+
+                Log("Rendering FPS counter.", LogLevels::Info);
+
+                _<FPSCounter>().Render();
+
+                Log("Rendering cursor.", LogLevels::Info);
+
+                _<Cursor>().Render();
+
+                Log("Presenting canvas.", LogLevels::Info);
+
+                _<SDLDevice>().PresentCanvas();
             }
+
+            Log("Cleaning up cursor.", LogLevels::Info);
+
+            _<Cursor>().Cleanup();
+
+            Log("Cleaning up SDL device.", LogLevels::Info);
+
+            _<SDLDevice>().Cleanup();
 
             std::cout << "Exiting game." << std::endl;
         }

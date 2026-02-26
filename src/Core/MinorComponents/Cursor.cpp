@@ -26,4 +26,9 @@ namespace Forradia
         imageRenderer.DrawImage("CursorDefault", mousePosition.x, mousePosition.y, cursorWidth,
                                 cursorHeight);
     }
+
+    void Cursor::Cleanup() const
+    {
+        SDL_ShowCursor(SDL_ENABLE);
+    }
 }

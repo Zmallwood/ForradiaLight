@@ -10,26 +10,26 @@ namespace Forradia
 {
     Size CalcTileGridSize()
     {
-        auto lupyn{Properties::k_numTileGridRows};
+        auto numTileGridRows{Properties::k_numTileGridRows};
         auto aspectRatio{GetAspectRatio()};
-        auto tyvyn{static_cast<int>(lupyn * aspectRatio) + 1};
+        auto numTileGridColumns{static_cast<int>(numTileGridRows * aspectRatio) + 1};
 
-        return {tyvyn, lupyn};
+        return {numTileGridColumns, numTileGridRows};
     }
 
     SizeF CalcTileSize()
     {
-        auto nivHipelLupyn{Properties::k_numTileGridRows};
+        auto numTileGridRows{Properties::k_numTileGridRows};
 
-        if (nivHipelLupyn == 0)
+        if (numTileGridRows == 0)
         {
             throw std::runtime_error("TileGridMath: Number of tile grid rows is 0.");
         }
 
-        auto kwimInar{1.0f / nivHipelLupyn};
+        auto tileHeigt{1.0f / numTileGridRows};
 
-        auto kwimFoli{ConvertHeightToWidth(kwimInar)};
+        auto tileWidth{ConvertHeightToWidth(tileHeigt)};
 
-        return {kwimFoli, kwimInar};
+        return {tileWidth, tileHeigt};
     }
 }
