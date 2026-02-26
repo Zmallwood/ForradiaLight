@@ -5,6 +5,7 @@
 
 #include "GUIButton.hpp"
 #include "Core/Rendering/TextRenderer.hpp"
+#include "Core/MinorComponents/Cursor.hpp"
 
 namespace Forradia
 {
@@ -27,6 +28,8 @@ namespace Forradia
         if (rect.Contains(GetMousePosition()))
         {
             m_hovered = true;
+
+            _<Cursor>().SetCursorStyle(CursorStyles::Hovering);
         }
         else
         {
@@ -42,7 +45,7 @@ namespace Forradia
 
         auto size{GetSize()};
 
-        _<TextRenderer>().DrawString(m_text, FontSizes::_26, position.x + size.width / 2.0f,
+        _<TextRenderer>().DrawString(m_text, FontSizes::_20, position.x + size.width / 2.0f,
                                      position.y + size.height / 2.0f, Palette::Wheat, true);
     }
 

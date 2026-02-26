@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include "CursorStyles.hpp"
+
 namespace Forradia
 {
     /**
@@ -15,12 +17,20 @@ namespace Forradia
       public:
         void Initialize();
 
+        void Reset();
+
         void Render() const;
 
         void Cleanup() const;
 
+        void SetCursorStyle(CursorStyles value)
+        {
+            m_cursorStyle = value;
+        }
+
       private:
         static constexpr float k_cursorWidth{
             0.03f}; ///< The width of the cursor icon in the canvas.
+        CursorStyles m_cursorStyle{CursorStyles::Default};
     };
 }

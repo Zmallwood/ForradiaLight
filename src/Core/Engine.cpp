@@ -35,6 +35,8 @@ namespace Forradia
 
             while (m_running)
             {
+                _<Cursor>().Reset();
+
                 Log("Polling events.", LogLevels::Info);
 
                 PollEvents();
