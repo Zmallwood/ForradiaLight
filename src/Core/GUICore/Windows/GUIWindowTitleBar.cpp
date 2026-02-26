@@ -15,6 +15,8 @@ namespace Forradia
 
     void GUIWindowTitleBar::RenderDerived()
     {
-        _<TextRenderer>().DrawString(m_title, FontSizes::_20, 0.0f, 0.0f, Palette::Wheat);
+        auto position{GetPosition()};
+
+        _<TextRenderer>().DrawString(m_title, FontSizes::_20, position.x, position.y, Palette::Wheat);
     }
 }

@@ -66,10 +66,7 @@ namespace Forradia
         {
         }
 
-        auto GetPosition() const
-        {
-            return m_position;
-        }
+        PointF GetPosition() const;
 
         auto GetVisible() const
         {

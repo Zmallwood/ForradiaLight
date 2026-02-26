@@ -61,6 +61,20 @@ namespace Forradia
         return component;
     }
 
+    PointF GUIComponent::GetPosition() const
+    {
+        PointF finalPosition{0.0f, 0.0f};
+
+        if (m_parent)
+        {
+            finalPosition += m_parent->GetPosition();
+        }
+
+        finalPosition += m_position;
+
+        return finalPosition;
+    }
+
     void GUIComponent::SetYPosition(float y)
     {
         m_position.y = y;

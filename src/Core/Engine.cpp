@@ -77,8 +77,6 @@ namespace Forradia
             Log("Cleaning up SDL device.", LogLevels::Info);
 
             _<SDLDevice>().Cleanup();
-
-            std::cout << "Exiting game." << std::endl;
         }
         catch (const std::exception &e)
         {
