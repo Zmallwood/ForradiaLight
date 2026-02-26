@@ -341,7 +341,11 @@ namespace Forradia
                     continue;
                 }
 
-                tile->SetCreature(std::make_shared<Creature>("CreatureWhiteRabbit"));
+                auto newCreature{std::make_shared<Creature>("CreatureWhiteRabbit")};
+
+                worldArea->GetCreaturesMirrorRef()[newCreature] = {x, y};
+
+                tile->SetCreature(newCreature);
             }
         }
     }

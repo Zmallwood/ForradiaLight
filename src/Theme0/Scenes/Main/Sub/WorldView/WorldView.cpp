@@ -46,6 +46,8 @@ namespace Forradia
 
         auto hoveredCoordinate{_<TileHovering>().GetHoveredCoordinate()};
 
+        auto destinationCoordinate{_<Player>().GetDestinationCoordinate()};
+
         for (auto y = 0; y < tileGridSize.height; y++)
         {
             for (auto x = 0; x < tileGridSize.width; x++)
@@ -101,6 +103,13 @@ namespace Forradia
                 if (xCoordinate == hoveredCoordinate.x && yCoordinate == hoveredCoordinate.y)
                 {
                     _<ImageRenderer>().DrawImage("TileHovered", x * tileSize.width,
+                                                 y * tileSize.height, tileSize.width + smallValue,
+                                                 tileSize.height + smallValue);
+                }
+
+                if (xCoordinate == destinationCoordinate.x && yCoordinate == destinationCoordinate.y)
+                {
+                    _<ImageRenderer>().DrawImage("TileDestination", x * tileSize.width,
                                                  y * tileSize.height, tileSize.width + smallValue,
                                                  tileSize.height + smallValue);
                 }

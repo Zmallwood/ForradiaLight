@@ -21,6 +21,8 @@ namespace Forradia
          */
         bool operator==(const Point &other) const;
 
+        Point operator+(const Point &other) const;
+
         int x{0}; ///< X dimension.
         int y{0}; ///< Y dimension.
     };

@@ -17,6 +17,7 @@
 #include "CustomGUI/GUISkillSlot.hpp"
 #include "Sub/UpdateSkillCasting.hpp"
 #include "Sub/UpdateMeditating.hpp"
+#include "Sub/UpdateCreaturesMovement.hpp"
 
 namespace Forradia
 {
@@ -54,6 +55,8 @@ namespace Forradia
         UpdateSkillCasting();
 
         UpdateMeditating();
+
+        UpdateCreaturesMovement();
     }
 
     void MainScene::RenderDerived()

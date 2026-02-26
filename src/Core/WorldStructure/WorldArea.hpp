@@ -8,6 +8,7 @@
 namespace Forradia
 {
     class Tile;
+    class Creature;
 
     /**
      * Represents a tile grid area of the game world.
@@ -23,8 +24,14 @@ namespace Forradia
 
         std::shared_ptr<Tile> GetTile(int x, int y) const;
 
+        auto &GetCreaturesMirrorRef()
+        {
+            return m_creaturesMirror;
+        }
+
       private:
         std::vector<std::vector<std::shared_ptr<Tile>>>
             m_tiles; ///< 2D tile grid of this world area.
+        std::unordered_map<std::shared_ptr<Creature>, Point> m_creaturesMirror;
     };
 }
