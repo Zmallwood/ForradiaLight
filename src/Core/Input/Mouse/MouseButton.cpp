@@ -17,6 +17,11 @@ namespace Forradia
         m_pressed = false;
     }
 
+    bool MouseButton::IsPressedLeaveResult()
+    {
+        return m_pressed;
+    }
+
     bool MouseButton::IsPressedPickResult()
     {
         auto result{m_pressed};

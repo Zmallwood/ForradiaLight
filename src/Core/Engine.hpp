@@ -15,6 +15,8 @@ namespace Forradia
       public:
         void Run();
 
+        void Stop();
+
       private:
         void Randomize();
 

@@ -86,6 +86,11 @@ namespace Forradia
         }
     }
 
+    void Engine::Stop()
+    {
+        m_running = false;
+    }
+
     void Engine::Randomize()
     {
         srand(time(nullptr));

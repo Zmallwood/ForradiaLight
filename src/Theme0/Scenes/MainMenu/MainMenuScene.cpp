@@ -12,6 +12,7 @@
 #include "Core/GUICore/GUIPanel.hpp"
 #include "Core/GUICore/GUITextConsole.hpp"
 #include "Core/GUICore/GUIButton.hpp"
+#include "Core/Engine.hpp"
 
 namespace Forradia
 {
@@ -22,7 +23,11 @@ namespace Forradia
         GetGUI()->AddComponent(std::make_shared<GUIPanel>(0.4f, 0.4f, 0.2f, 0.2f));
 
         GetGUI()->AddComponent(
-            std::make_shared<GUIButton>("Start Game", 0.45f, 0.45f, 0.1f, 0.04f, [this]() {}));
+            std::make_shared<GUIButton>("Start Game", 0.45f, 0.45f, 0.1f, 0.04f, [this]()
+                                        { _<SceneManager>().GoToScene("WorldGenerationScene"); }));
+
+        GetGUI()->AddComponent(std::make_shared<GUIButton>("Quit", 0.45f, 0.5f, 0.1f, 0.04f,
+                                                           [this]() { _<Engine>().Stop(); }));
 
         _<GUITextConsole>().PrintLine("Game started.");
     }
@@ -34,11 +39,6 @@ namespace Forradia
 
     void MainMenuScene::UpdateDerived()
     {
-        if (_<KeyboardInput>().AnyKeyIsPressedPickResult() ||
-            _<MouseInput>().AnyButtonIsPressedPickResult())
-        {
-            _<SceneManager>().GoToScene("WorldGenerationScene");
-        }
     }
 
     void MainMenuScene::RenderDerived()

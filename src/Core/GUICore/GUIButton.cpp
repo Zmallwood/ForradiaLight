@@ -6,6 +6,7 @@
 #include "GUIButton.hpp"
 #include "Core/Rendering/TextRenderer.hpp"
 #include "Core/MinorComponents/Cursor.hpp"
+#include "Core/Input/Mouse/MouseInput.hpp"
 
 namespace Forradia
 {
@@ -30,6 +31,11 @@ namespace Forradia
             m_hovered = true;
 
             _<Cursor>().SetCursorStyle(CursorStyles::Hovering);
+
+            if (_<MouseInput>().GetLeftButton()->IsPressedLeaveResult())
+            {
+                m_action();
+            }
         }
         else
         {

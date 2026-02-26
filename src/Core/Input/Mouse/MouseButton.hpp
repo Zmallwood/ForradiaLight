@@ -24,6 +24,8 @@ namespace Forradia
          */
         void RegisterRelease();
 
+        bool IsPressedLeaveResult();
+
         /**
          * Tells if this mouse button is currently being pressed, and resets the state.
          *
