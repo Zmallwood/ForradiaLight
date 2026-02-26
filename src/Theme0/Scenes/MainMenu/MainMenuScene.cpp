@@ -23,10 +23,10 @@ namespace Forradia
         GetGUI()->AddComponent(std::make_shared<GUIPanel>(0.4f, 0.4f, 0.2f, 0.2f));
 
         GetGUI()->AddComponent(
-            std::make_shared<GUIButton>("Start Game", 0.45f, 0.45f, 0.1f, 0.04f, [this]()
+            std::make_shared<GUIButton>("Start Game", 0.45f, 0.44f, 0.1f, 0.04f, [this]()
                                         { _<SceneManager>().GoToScene("WorldGenerationScene"); }));
 
-        GetGUI()->AddComponent(std::make_shared<GUIButton>("Quit", 0.45f, 0.5f, 0.1f, 0.04f,
+        GetGUI()->AddComponent(std::make_shared<GUIButton>("Quit", 0.45f, 0.52f, 0.1f, 0.04f,
                                                            [this]() { _<Engine>().Stop(); }));
 
         _<GUITextConsole>().PrintLine("Game started.");

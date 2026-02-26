@@ -80,6 +80,89 @@ namespace Forradia
                                              tileSize.width + smallValue,
                                              tileSize.height + smallValue);
 
+                Point coordNorth{xCoordinate, yCoordinate - 1};
+                Point coordEast{xCoordinate + 1, yCoordinate};
+                Point coordSouth{xCoordinate, yCoordinate + 1};
+                Point coordWest{xCoordinate - 1, yCoordinate};
+
+                std::shared_ptr<Tile> tileNorth;
+                std::shared_ptr<Tile> tileEast;
+                std::shared_ptr<Tile> tileSouth;
+                std::shared_ptr<Tile> tileWest;
+
+                if (currentWorldArea->IsValidTile(coordNorth.x, coordNorth.y))
+                {
+                    tileNorth = currentWorldArea->GetTile(coordNorth.x, coordNorth.y);
+                }
+
+                if (currentWorldArea->IsValidTile(coordEast.x, coordEast.y))
+                {
+                    tileEast = currentWorldArea->GetTile(coordEast.x, coordEast.y);
+                }
+
+                if (currentWorldArea->IsValidTile(coordSouth.x, coordSouth.y))
+                {
+                    tileSouth = currentWorldArea->GetTile(coordSouth.x, coordSouth.y);
+                }
+
+                if (currentWorldArea->IsValidTile(coordWest.x, coordWest.y))
+                {
+                    tileWest = currentWorldArea->GetTile(coordWest.x, coordWest.y);
+                }
+
+                auto drawTileN{false};
+                auto drawTileE{false};
+                auto drawTileS{false};
+                auto drawTileW{false};
+
+                if (tile->GetGround() != Hash("GroundWater"))
+                {
+                    if (tileNorth && tileNorth->GetGround() == Hash("GroundWater"))
+                    {
+                        drawTileN = true;
+                    }
+
+                    if (tileEast && tileEast->GetGround() == Hash("GroundWater"))
+                    {
+                        drawTileE = true;
+                    }
+
+                    if (tileSouth && tileSouth->GetGround() == Hash("GroundWater"))
+                    {
+                        drawTileS = true;
+                    }
+
+                    if (tileWest && tileWest->GetGround() == Hash("GroundWater"))
+                    {
+                        drawTileW = true;
+                    }
+                }
+
+                if (drawTileN)
+                {
+                    _<ImageRenderer>().DrawImage("TileEdgeNorth", x * tileSize.width,
+                                                 y * tileSize.height, tileSize.width + smallValue,
+                                                 tileSize.height + smallValue);
+                }
+                if (drawTileE)
+                {
+                    _<ImageRenderer>().DrawImage("TileEdgeEast", x * tileSize.width,
+                                                 y * tileSize.height, tileSize.width + smallValue,
+                                                 tileSize.height + smallValue);
+                }
+                if (drawTileS)
+                {
+                    _<ImageRenderer>().DrawImage("TileEdgeSouth", x * tileSize.width,
+                                                 y * tileSize.height, tileSize.width + smallValue,
+                                                 tileSize.height + smallValue);
+                }
+                if (drawTileW)
+                {
+                    _<ImageRenderer>().DrawImage("TileEdgeWest", x * tileSize.width,
+                                                 y * tileSize.height, tileSize.width + smallValue,
+                                                 tileSize.height + smallValue);
+                }
+
                 auto darknessLevel{tile->GetDarknessLevel()};
 
                 for (auto i = 0; i < darknessLevel; i++)
